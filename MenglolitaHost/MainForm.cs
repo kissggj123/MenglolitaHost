@@ -51,6 +51,39 @@ namespace MenglolitaHost
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            if (Directory.Exists(Path + @"\" + "yoursHosts"))
+            {
+                testhoost.Enabled = true;
+                //hostlk.Enabled = false;
+            }
+            else
+            {
+                testhoost.Enabled = false;
+                hostlk.Enabled = true;
+            }
+
+            if (Directory.Exists(Path + @"\" + "Hostbak"))
+            {
+                restore.Enabled = true;
+            }
+            else
+            {
+               restore.Enabled = false;
+            }
+         
+            if (File.Exists(Path + "Mhost.sl"))
+            {
+                zhuabao.Enabled = true;
+                WinPcap.Enabled = true;
+            }
+            else
+            {
+                zhuabao.Enabled = false;
+                WinPcap.Enabled = false;
+            }
+            //检测授权文件是否存在并且启用
+
             if (!IsAdministrator())
             {
                 MessageBox.Show("请右键管理员运行", "出错了", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -63,7 +96,7 @@ namespace MenglolitaHost
             {
                 if (Environment.OSVersion.Version.Major >= 6)
                 {
-                    this.Text += "--"+"by 北斗家老司机";
+                    this.Text += "--" + "hosts更新工具";
                 }
 
                 MakeWriteable(_path);
@@ -118,7 +151,7 @@ namespace MenglolitaHost
                 req.ServicePoint.Expect100Continue = false;
                 req.Method = "GET";
                 req.KeepAlive = true;
-                req.UserAgent = "Menglolita Host 1.0";
+                req.UserAgent = "Menglolita Host 1.3";
                 req.Timeout = 30 * 1000;
 
                 // 以字符流的方式读取HTTP响应
@@ -144,7 +177,7 @@ namespace MenglolitaHost
             {
                 _thread = null;
                 _timer.Enabled = false;
-                this.SafeInvoke(() => { this.btnUpdate.Text = "已经好啦"; });
+                this.SafeInvoke(() => { this.btnUpdate.Text = "更新已结束"; });
             }
         }
 
@@ -156,7 +189,7 @@ namespace MenglolitaHost
                 {
                     try
                     {
-                        this.SafeInvoke(() => { this.btnUpdate.Text = "更新到最新"; });
+                        this.SafeInvoke(() => { this.btnUpdate.Text = "更新已结束"; });
                         _thread.Abort();
                     }
                     catch { }
@@ -185,6 +218,36 @@ namespace MenglolitaHost
             return result;
         }
 
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            /*System.Diagnostics.Process[] process = System.Diagnostics.Process.GetProcessesByName("MLSniffer");
+            foreach (System.Diagnostics.Process p in process)
+            {
+                p.Kill();
+            }*/
+            Process[] thepro = Process.GetProcessesByName("MLSniffer");
+            if (thepro.Length > 0)
+            //如果进程曾在或者不止一个 
+            {
+                //逐个结束 
+                for (int i = 0; i < thepro.Length; i++)
+                {
+                    //如果还没有结束就关闭他 
+                    if (!thepro[i].CloseMainWindow()) thepro[i].Kill();
+                }
+            }
+           //從輸出流取得命令執行結果
+            Process[] process = Process.GetProcesses();
+            foreach (Process prc in process)
+            {
+                Console.WriteLine(prc.ProcessName);
+                if (prc.ProcessName == "MLSniffer")
+                    //if (prc.ProcessName == "MLSniffer")
+                    prc.Kill();
+            }
+            Console.ReadLine();
+        }
         private static void MakeWriteable(String fileName)
         {
             if (File.Exists(fileName))
@@ -198,35 +261,146 @@ namespace MenglolitaHost
         private void bakhost_Click(object sender, EventArgs e)
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string Path2 = AppDomain.CurrentDomain.BaseDirectory + @"\" + "Hostbak";
-            if (!System.IO.Directory.Exists(Path+@"\"+"Hostbak"))
+            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Hostbak";
+            if (!System.IO.Directory.Exists(Path + @"\" + "Hostbak"))
             {
                 // 目录不存在，建立目录
                 System.IO.Directory.CreateDirectory(Path + @"\" + "Hostbak");
             }
             String sourcePath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
-            String targetPath = Path2+@"\"+"hosts";
+            String targetPath = Path2 + @"\" + "hosts";
             bool isrewrite = true; //覆盖已存在的同名文件,false则反之
             System.IO.File.Copy(sourcePath, targetPath, isrewrite);
-            MessageBox.Show("Host备份完成", "你尽情的搞事情吧");
-
+            MessageBox.Show("Host备份完成\r\n备份所在位置：" + Path2 + "\r\nHosts默认位置：C:\\Windows\\System32\\drivers\\etc", "你尽情的搞事情吧", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            restore.Enabled = true;
         }
-    }
 
-    public static class ControlExtention
-    {
-        public delegate void InvokeHandler();
-
-        public static void SafeInvoke(this Control control, InvokeHandler handler)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (control.InvokeRequired)
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            if (File.Exists(Path + "Mhost.sl"))
             {
-                control.Invoke(handler);
+                this.Text = "（" + "当前为开发者模式" + ")"; ;
             }
             else
             {
-                handler();
+                MessageBox.Show("这个功能用不了哦", "文件...好像不存在", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //启动抓包工具
+            if (File.Exists(Path + "bin" + @"\" + "MLSniffer.exe"))
+            {
+                Process proc = new Process();
+                proc.StartInfo.FileName = Path + "bin" + @"\" + "MLSniffer.exe";
+                proc.Start();
+            }
+            else
+            {
+                MessageBox.Show("这个功能用不了哦", "文件...好像不存在", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void qh_Click(object sender, EventArgs e)
+        {
+            Form aptget = new aptget();
+            aptget.ShowDialog();
+        }
+
+        private void testhoost_Click(object sender, EventArgs e)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "yoursHosts";
+            if (File.Exists(Path2 + @"\" + "hosts"))
+            {
+                String winhosts = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                String yourshosts = Path2 + @"\" + "hosts";
+                bool isrewrite = true; //覆盖已存在的同名文件,false则反之
+                System.IO.File.Copy(yourshosts, winhosts, isrewrite);
+                MessageBox.Show("Hosts写入完成，看看能不能正常工作吧", "搞定", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("你TM在搞事情吗？\r\n哪来的hosts文件\r\n当我瞎吗", "年轻人不要搞事情", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void restore_Click(object sender, EventArgs e)
+        {
+            /*string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Hostbak";
+            if (!System.IO.Directory.Exists(Path + @"\" + "Hostbak"))
+            {
+                // 目录不存在，建立目录
+                MessageBox.Show("备份的文件被你吃了嘛", "你别骗我");
+            }
+            String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+            String bakPath = Path2 + @"\" + "hosts";
+            bool isrewrite = true; //覆盖已存在的同名文件,false则反之
+            System.IO.File.Copy(bakPath, oldPath, isrewrite);
+            MessageBox.Show("Hosts恢复完成", "又和以前一样啦");*/
+            Form restore = new restore();
+            restore.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("这是个很危(wu)险(liao)的操作\r\n该操作不可逆", "年轻人不要想着搞个大新闻", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "yoursHosts";
+            if (!System.IO.Directory.Exists(Path + @"\" + "yoursHosts"))
+            {
+                // 目录不存在，建立目录
+                System.IO.Directory.CreateDirectory(Path + @"\" + "yoursHosts");
+                testhoost.Enabled = true;
+                System.Diagnostics.Process.Start(Path2);
+            }
+            else
+            {
+                System.Diagnostics.Process.Start(Path2);
+            }
+            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("感谢参与这个工具的所有人", "程序基于GPLv3协议发布");
+        }
+
+        private void WinPcap_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            //安装WinPcap驱动用于访问底层网络
+            if (File.Exists(Path + "Confion" + @"\" + "WinPcap.exe"))
+            {
+                Process proc = new Process();
+                proc.StartInfo.FileName = Path + "Confion" + @"\" + "WinPcap.exe";
+                proc.Start();
+            }
+            else
+            {
+                MessageBox.Show("你肯定把这东西吃了", "你就等着用不了吧", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("这TM绝对是最后一个版本\r\n不是我就是*(bi)*(bi)", "说不定我马上就反悔了");
+        }
+    }
+
+        public static class ControlExtention
+        {
+            public delegate void InvokeHandler();
+
+            public static void SafeInvoke(this Control control, InvokeHandler handler)
+            {
+                if (control.InvokeRequired)
+                {
+                    control.Invoke(handler);
+                }
+                else
+                {
+                    handler();
+                }
             }
         }
     }
-}

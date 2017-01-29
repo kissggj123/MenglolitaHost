@@ -1,0 +1,36 @@
+第一种：更改DNS直接翻墙
+我国的dns遭到长城防火墙的污染，不能正常解析google等。
+自己更改下电脑的本地dns即可。（更改后记得刷新下dns缓存 否则可能设置没有生效，dns还是刚才的）
+刷新dns缓存命令    管理员身份运行 ipconfig/flushdns
+1、Xsico DNS
+
+官方网站 – 科学上网 http://dns.xsico.cn/
+
+Public Dns：115.159.157.26
+
+Scholar Dns：115.159.158.38
+
+2、Mogu DNS  
+
+官方网站 – 科学上网+广告过滤  https://mogudns.net
+
+北方推荐：122.114.245.45
+
+南方推荐：115.159.96.69
+
+Pure DNS
+
+官方网站 – 科学上网+广告过滤 http://puredns.cn/
+
+北方推荐：123.207.137.88
+
+南方推荐：115.159.220.214
+ 
+
+第二种 很简单，都知道的更改hosts，推荐几个常用的更新hosts的网站（ipv4环境下更改hosts是无法看youtube的，
+如果做了反向代理的话则可以）
+1、https://github.com/racaljk/hosts
+2、https://laod.cn/hosts/2017-google-hosts.html
+3、https://serve.netsh.org/pub/ipv4-hosts/
+4、https://github.com/vokins/yhosts
+5、https://github.com/sy618/hosts
