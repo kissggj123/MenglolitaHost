@@ -44,11 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="aptget.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="aptget.Designer.cs">
       <DependentUpon>aptget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="easymode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="easymode.Designer.cs">
+      <DependentUpon>easymode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hostseditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hostseditor.Designer.cs">
+      <DependentUpon>hostseditor.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -70,8 +88,17 @@
     <Compile Include="restore.Designer.cs">
       <DependentUpon>restore.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="aptget.resx">
       <DependentUpon>aptget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="easymode.resx">
+      <DependentUpon>easymode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hostseditor.resx">
+      <DependentUpon>hostseditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -38,12 +38,14 @@ namespace MenglolitaHost
             {
                 moreapt.Visible = true;
                 moreapt.Enabled = true;
+                ipv6hosts.Enabled = true;
                 //
             }
             else
             {
                 moreapt.Visible = false;
                 moreapt.Enabled = false;
+                ipv6hosts.Enabled = false;
                 //
             }
             url.Visible = false;
@@ -108,6 +110,17 @@ namespace MenglolitaHost
                     {
                         var content = reader.ReadToEnd();
                         File.WriteAllText(_path, content, Encoding.UTF8);
+                        string str = "ipconfig /flushdns";
+                        System.Diagnostics.Process p = new System.Diagnostics.Process(); p.StartInfo.FileName = "cmd.exe";
+                        p.StartInfo.UseShellExecute = false; //是否使用操作系统shell启动
+                        p.StartInfo.RedirectStandardInput = true;//接受来自调用程序的输入信息
+                        p.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息
+                        p.StartInfo.RedirectStandardError = true;//重定向标准错误输出 
+                        p.StartInfo.CreateNoWindow = true;//不显示程序窗口
+                        p.Start();//启动程序
+                        //向cmd窗口发送输入信息
+                        p.StandardInput.WriteLine(str + "&exit");
+                        p.StandardInput.AutoFlush = true;
                         MessageBox.Show("更新第三方源成功", "已完工", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Hostbak" + @"\" + "第三方源hosts备份";
                         /*string Path = AppDomain.CurrentDomain.BaseDirectory;
@@ -205,6 +218,13 @@ namespace MenglolitaHost
         {
             Form moreapt = new moreapt();
             moreapt.ShowDialog();
+        }
+
+        private void ipv6hosts_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ipv6hosts.Checked)
+                url.Text = "https://raw.githubusercontent.com/lennylxx/ipv6-hosts/master/hosts";
+            qd.Enabled = true;
         }
     }
 }

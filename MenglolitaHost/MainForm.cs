@@ -28,12 +28,27 @@ namespace MenglolitaHost
         private Thread _thread = null;
         private System.Timers.Timer _timer = new System.Timers.Timer(40 * 1000);
 
+        public MainForm(int _Minimum, int _Maximum)
+        {
+            InitializeComponent();
+            progressBar1.Maximum = _Maximum;//设置范围最大值
+            progressBar1.Value = progressBar1.Minimum = _Minimum;//设置范围最小值
+        }
+
         public MainForm()
         {
             InitializeComponent();
             _timer.AutoReset = false;
             _timer.Enabled = false;
             _timer.Elapsed += TimeOut;
+        }
+        public void setPos(int value)//设置进度条当前进度值
+        {
+            if (value < progressBar1.Maximum)//如果值有效
+            {
+                progressBar1.Value = value;//设置进度值
+            }
+            Application.DoEvents();//防止父子窗体都假死
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -69,9 +84,9 @@ namespace MenglolitaHost
             }
             else
             {
-               restore.Enabled = false;
+                restore.Enabled = false;
             }
-         
+
             if (File.Exists(Path + "Mhost.sl"))
             {
                 zhuabao.Enabled = true;
@@ -96,10 +111,18 @@ namespace MenglolitaHost
             {
                 if (Environment.OSVersion.Version.Major >= 6)
                 {
+                    update.Enabled = false;
+                    update.Visible = false;
                     this.Text += "--" + "hosts更新工具";
                 }
 
                 MakeWriteable(_path);
+            }
+            MainForm MainForm = new MainForm(0, 100);
+            for (int i = 0; i < 100; i++)
+            {
+                MainForm.setPos(i);//设置进度条位置
+                timer1.Enabled = true;
             }
         }
 
@@ -163,6 +186,19 @@ namespace MenglolitaHost
                     {
                         var content = reader.ReadToEnd();
                         File.WriteAllText(_path, content, Encoding.UTF8);
+                        //更新DNS缓存
+                        string str = "ipconfig /flushdns";
+                        System.Diagnostics.Process p = new System.Diagnostics.Process(); p.StartInfo.FileName = "cmd.exe";
+                        p.StartInfo.UseShellExecute = false; //是否使用操作系统shell启动
+                        p.StartInfo.RedirectStandardInput = true;//接受来自调用程序的输入信息
+                        p.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息
+                        p.StartInfo.RedirectStandardError = true;//重定向标准错误输出 
+                        p.StartInfo.CreateNoWindow = true;//不显示程序窗口
+                        p.Start();//启动程序
+                        //向cmd窗口发送输入信息
+                        p.StandardInput.WriteLine(str + "&exit");
+                        p.StandardInput.AutoFlush = true;
+                        //p.StandardInput.WriteLine("exit");
                         MessageBox.Show("更新成功", "已完工", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnUpdate.Enabled = true;
                     }
@@ -190,7 +226,10 @@ namespace MenglolitaHost
                     try
                     {
                         this.SafeInvoke(() => { this.btnUpdate.Text = "更新已结束"; });
+                        _thread = null;
+                        _timer.Enabled = false;
                         _thread.Abort();
+                        //this.SafeInvoke(() => { this.btnUpdate.Text = "更新已结束"; });
                     }
                     catch { }
                 }
@@ -226,7 +265,7 @@ namespace MenglolitaHost
             {
                 p.Kill();
             }*/
-            Process[] thepro = Process.GetProcessesByName("MLSniffer");
+            Process[] thepro = Process.GetProcessesByName("MLSniffer");
             if (thepro.Length > 0)
             //如果进程曾在或者不止一个 
             {
@@ -237,7 +276,7 @@ namespace MenglolitaHost
                     if (!thepro[i].CloseMainWindow()) thepro[i].Kill();
                 }
             }
-           //從輸出流取得命令執行結果
+            //從輸出流取得命令執行結果
             Process[] process = Process.GetProcesses();
             foreach (Process prc in process)
             {
@@ -357,12 +396,12 @@ namespace MenglolitaHost
             {
                 System.Diagnostics.Process.Start(Path2);
             }
-            
+
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("感谢参与这个工具的所有人", "程序基于GPLv3协议发布");
+            MessageBox.Show("感谢参与这个工具的所有人", "程序基于GPLv3协议发布", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void WinPcap_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -383,24 +422,114 @@ namespace MenglolitaHost
 
         private void label5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("这TM绝对是最后一个版本\r\n不是我就是*(bi)*(bi)", "说不定我马上就反悔了");
+            MessageBox.Show("这TM绝对是最后一个版本\r\n不是我就是*(bi)*(bi)\r\n还有...", "说不定我马上就反悔了", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-    }
 
-        public static class ControlExtention
+        private void menglolitaHostToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            public delegate void InvokeHandler();
 
-            public static void SafeInvoke(this Control control, InvokeHandler handler)
+            Form AboutBox1 = new AboutBox1();
+            AboutBox1.ShowDialog();
+        }
+
+        private void hostedit_Click(object sender, EventArgs e)
+        {
+            Form hostseditor = new hostseditor();
+            hostseditor.Show();
+        }
+
+        private void 配置懒人模式ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form easymode = new easymode();
+            easymode.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int i = 100;
+            progressBar1.Value = progressBar1.Value + 1;
+            i = 100 - progressBar1.Value;
+            label7.Text = "正在刷新目前可用的hosts信息";//显示百分比
+            label8.Text = progressBar1.Value.ToString() + "%";
+            if (i == 0)
             {
-                if (control.InvokeRequired)
-                {
-                    control.Invoke(handler);
-                }
-                else
-                {
-                    handler();
-                }
+                timer1.Enabled = false;
+                label7.Text = "hosts已刷新并准备就绪";//显示百分比
+                label8.Text = "完成";
+                //update.Enabled = true;
+                //update.Visible = true;
+            }
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            /*timer1.Enabled = true;
+            update.Enabled = false;
+            update.Visible = false;
+            int i = 100;
+            progressBar1.Value = progressBar1.Value + 1;
+            i = 100 - progressBar1.Value;
+            label7.Text = "正在重新检查程序源的hosts信息";//显示百分比
+            label8.Text = progressBar1.Value.ToString() + "%";
+            if (i == 0)
+            {
+                timer1.Enabled = false;
+                label7.Text = "hosts源已准备就绪";//显示百分比
+                label8.Text = "完成";
+                update.Enabled = true;
+                update.Visible = true;*/
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void youTube专用hostsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void goHostsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Confion";
+            if (!System.IO.Directory.Exists(Path + @"\" + "Confion"))
+            {
+                // 目录不存在，建立目录
+                MessageBox.Show("备份的文件被你吃了嘛", "你别骗我");
+                //return;
+            }
+            else
+            {
+                String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                String bakPath = Path2 + @"\" + "hosts";
+                bool isrewrite = true; //覆盖已存在的同名文件,false则反之
+                System.IO.File.Copy(bakPath, oldPath, isrewrite);
+                MessageBox.Show("Hosts恢复完成", "年轻人继续搞事情", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
+
+    public static class ControlExtention
+    {
+        public delegate void InvokeHandler();
+
+        public static void SafeInvoke(this Control control, InvokeHandler handler)
+        {
+            if (control.InvokeRequired)
+            {
+                control.Invoke(handler);
+            }
+            else
+            {
+                handler();
+            }
+        }
+    }
+}
+        
+ 
+    
+
+

@@ -36,13 +36,15 @@
             this.twotoone = new System.Windows.Forms.RadioButton();
             this.url = new System.Windows.Forms.Label();
             this.moreapt = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ipv6hosts = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // qd
             // 
             this.qd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.qd.ForeColor = System.Drawing.Color.Blue;
-            this.qd.Location = new System.Drawing.Point(289, 132);
+            this.qd.Location = new System.Drawing.Point(319, 150);
             this.qd.Name = "qd";
             this.qd.Size = new System.Drawing.Size(86, 32);
             this.qd.TabIndex = 1;
@@ -113,7 +115,7 @@
             this.moreapt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.moreapt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.moreapt.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.moreapt.Location = new System.Drawing.Point(163, 132);
+            this.moreapt.Location = new System.Drawing.Point(189, 150);
             this.moreapt.Name = "moreapt";
             this.moreapt.Size = new System.Drawing.Size(112, 32);
             this.moreapt.TabIndex = 9;
@@ -122,13 +124,39 @@
             this.moreapt.Visible = false;
             this.moreapt.Click += new System.EventHandler(this.moreapt_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(12, 159);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(162, 16);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "下载hosts文件后进行编辑";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // ipv6hosts
+            // 
+            this.ipv6hosts.AutoSize = true;
+            this.ipv6hosts.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ipv6hosts.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.ipv6hosts.Location = new System.Drawing.Point(12, 121);
+            this.ipv6hosts.Name = "ipv6hosts";
+            this.ipv6hosts.Size = new System.Drawing.Size(301, 21);
+            this.ipv6hosts.TabIndex = 11;
+            this.ipv6hosts.Text = "lennylxx ipv6-hosts：Google的ipv6 hosts项目";
+            this.ipv6hosts.UseVisualStyleBackColor = true;
+            this.ipv6hosts.CheckedChanged += new System.EventHandler(this.ipv6hosts_CheckedChanged);
+            // 
             // aptget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(387, 172);
+            this.ClientSize = new System.Drawing.Size(417, 194);
+            this.Controls.Add(this.ipv6hosts);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.moreapt);
             this.Controls.Add(this.url);
             this.Controls.Add(this.twotoone);
@@ -159,5 +187,7 @@
         private System.Windows.Forms.RadioButton twotoone;
         private System.Windows.Forms.Label url;
         private System.Windows.Forms.Button moreapt;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.RadioButton ipv6hosts;
     }
 }

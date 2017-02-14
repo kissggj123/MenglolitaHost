@@ -45,12 +45,12 @@ namespace MenglolitaHost
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelUAC = new System.Windows.Forms.Panel();
             this.lbUAC = new System.Windows.Forms.Label();
             this.btnStartWithAdmin = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bakhost = new System.Windows.Forms.Button();
@@ -65,8 +65,24 @@ namespace MenglolitaHost
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tools = new System.Windows.Forms.ToolStripMenuItem();
+            this.hostedit = new System.Windows.Forms.ToolStripMenuItem();
+            this.懒人模式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.配置懒人模式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abouthosts = new System.Windows.Forms.ToolStripMenuItem();
+            this.about = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label7 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.update = new System.Windows.Forms.Button();
+            this.youTube专用hostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelUAC.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelUAC
@@ -115,24 +131,13 @@ namespace MenglolitaHost
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Red;
-            this.btnUpdate.Location = new System.Drawing.Point(354, 164);
+            this.btnUpdate.Location = new System.Drawing.Point(353, 196);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(158, 37);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "更新hosts";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(36, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 100);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "本程序用于更新hosts文件\r\n勿做其他用途\r\n遇上杀毒软件拦截请允许\r\n感谢所有用到的开源项目";
             // 
             // label2
             // 
@@ -146,6 +151,7 @@ namespace MenglolitaHost
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(274, 41);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -161,7 +167,7 @@ namespace MenglolitaHost
             this.bakhost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bakhost.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.bakhost.ForeColor = System.Drawing.Color.Blue;
-            this.bakhost.Location = new System.Drawing.Point(83, 164);
+            this.bakhost.Location = new System.Drawing.Point(82, 196);
             this.bakhost.Name = "bakhost";
             this.bakhost.Size = new System.Drawing.Size(146, 37);
             this.bakhost.TabIndex = 11;
@@ -178,7 +184,7 @@ namespace MenglolitaHost
             this.groupBox1.Controls.Add(this.testhoost);
             this.groupBox1.Controls.Add(this.restore);
             this.groupBox1.Controls.Add(this.qh);
-            this.groupBox1.Location = new System.Drawing.Point(13, 265);
+            this.groupBox1.Location = new System.Drawing.Point(12, 264);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(576, 171);
             this.groupBox1.TabIndex = 12;
@@ -271,7 +277,7 @@ namespace MenglolitaHost
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(63, 204);
+            this.label3.Location = new System.Drawing.Point(69, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(186, 22);
             this.label3.TabIndex = 13;
@@ -282,8 +288,8 @@ namespace MenglolitaHost
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(339, 204);
+            this.label4.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label4.Location = new System.Drawing.Point(340, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(198, 22);
             this.label4.TabIndex = 14;
@@ -295,11 +301,11 @@ namespace MenglolitaHost
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(144, 439);
+            this.label5.Location = new System.Drawing.Point(144, 495);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 17);
+            this.label5.Size = new System.Drawing.Size(208, 17);
             this.label5.TabIndex = 15;
-            this.label5.Text = "版本@1.5 Final Version";
+            this.label5.Text = "版本@1.5.6 Final Preview Version";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
@@ -308,12 +314,147 @@ namespace MenglolitaHost
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(10, 439);
+            this.label6.Location = new System.Drawing.Point(10, 495);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "编译者@北斗家老司机";
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tools,
+            this.懒人模式ToolStripMenuItem,
+            this.youTube专用hostsToolStripMenuItem,
+            this.abouthosts});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(601, 25);
+            this.menuStrip1.TabIndex = 17;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tools
+            // 
+            this.tools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hostedit});
+            this.tools.Name = "tools";
+            this.tools.Size = new System.Drawing.Size(44, 21);
+            this.tools.Text = "操作";
+            // 
+            // hostedit
+            // 
+            this.hostedit.Name = "hostedit";
+            this.hostedit.Size = new System.Drawing.Size(143, 22);
+            this.hostedit.Text = "hosts编辑器";
+            this.hostedit.Click += new System.EventHandler(this.hostedit_Click);
+            // 
+            // 懒人模式ToolStripMenuItem
+            // 
+            this.懒人模式ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.配置懒人模式ToolStripMenuItem});
+            this.懒人模式ToolStripMenuItem.Name = "懒人模式ToolStripMenuItem";
+            this.懒人模式ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.懒人模式ToolStripMenuItem.Text = "懒人模式";
+            // 
+            // 配置懒人模式ToolStripMenuItem
+            // 
+            this.配置懒人模式ToolStripMenuItem.Name = "配置懒人模式ToolStripMenuItem";
+            this.配置懒人模式ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.配置懒人模式ToolStripMenuItem.Text = "配置懒人模式";
+            this.配置懒人模式ToolStripMenuItem.Click += new System.EventHandler(this.配置懒人模式ToolStripMenuItem_Click);
+            // 
+            // abouthosts
+            // 
+            this.abouthosts.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.about});
+            this.abouthosts.Name = "abouthosts";
+            this.abouthosts.Size = new System.Drawing.Size(44, 21);
+            this.abouthosts.Text = "关于";
+            // 
+            // about
+            // 
+            this.about.Name = "about";
+            this.about.Size = new System.Drawing.Size(169, 22);
+            this.about.Text = "Menglolita Host";
+            this.about.Click += new System.EventHandler(this.menglolitaHostToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(33, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(232, 100);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "本程序用于更新hosts文件\r\n勿做其他用途\r\n遇上杀毒软件拦截请允许\r\n感谢所有用到的开源项目";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.Color.MistyRose;
+            this.progressBar1.ForeColor = System.Drawing.Color.White;
+            this.progressBar1.Location = new System.Drawing.Point(12, 469);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(576, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 19;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.label7.ForeColor = System.Drawing.Color.Tomato;
+            this.label7.Location = new System.Drawing.Point(12, 449);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 17);
+            this.label7.TabIndex = 20;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.label8.ForeColor = System.Drawing.Color.Tomato;
+            this.label8.Location = new System.Drawing.Point(559, 449);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 17);
+            this.label8.TabIndex = 21;
+            // 
+            // update
+            // 
+            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.ForeColor = System.Drawing.Color.Teal;
+            this.update.Location = new System.Drawing.Point(455, 441);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(98, 22);
+            this.update.TabIndex = 22;
+            this.update.Text = "检查hosts信息";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
+            // 
+            // youTube专用hostsToolStripMenuItem
+            // 
+            this.youTube专用hostsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.goHostsToolStripMenuItem});
+            this.youTube专用hostsToolStripMenuItem.Name = "youTube专用hostsToolStripMenuItem";
+            this.youTube专用hostsToolStripMenuItem.Size = new System.Drawing.Size(126, 21);
+            this.youTube专用hostsToolStripMenuItem.Text = "YouTube专用hosts";
+            this.youTube专用hostsToolStripMenuItem.Click += new System.EventHandler(this.youTube专用hostsToolStripMenuItem_Click);
+            // 
+            // goHostsToolStripMenuItem
+            // 
+            this.goHostsToolStripMenuItem.Name = "goHostsToolStripMenuItem";
+            this.goHostsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.goHostsToolStripMenuItem.Text = "GoHosts";
+            this.goHostsToolStripMenuItem.Click += new System.EventHandler(this.goHostsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -322,7 +463,12 @@ namespace MenglolitaHost
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(601, 465);
+            this.ClientSize = new System.Drawing.Size(601, 521);
+            this.Controls.Add(this.update);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -331,22 +477,25 @@ namespace MenglolitaHost
             this.Controls.Add(this.bakhost);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.panelUAC);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(370, 250);
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menglolita Host 1.5 Final Version";
+            this.Text = "Menglolita Host 1.5.6 Final Preview Version";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelUAC.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,7 +507,6 @@ namespace MenglolitaHost
         private System.Windows.Forms.Label lbUAC;
         private System.Windows.Forms.Button btnStartWithAdmin;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button bakhost;
@@ -373,5 +521,20 @@ namespace MenglolitaHost
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel WinPcap;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tools;
+        private System.Windows.Forms.ToolStripMenuItem hostedit;
+        private System.Windows.Forms.ToolStripMenuItem abouthosts;
+        private System.Windows.Forms.ToolStripMenuItem about;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem 懒人模式ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 配置懒人模式ToolStripMenuItem;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.ToolStripMenuItem youTube专用hostsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goHostsToolStripMenuItem;
     }
 }
