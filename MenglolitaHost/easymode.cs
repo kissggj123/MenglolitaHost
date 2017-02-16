@@ -15,5 +15,20 @@ namespace MenglolitaHost
         {
             InitializeComponent();
         }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox1.Enabled = true;
+            checkBox1.Checked = true;
+            checkBox2.Enabled = true;
+            checkBox2.Checked = true;
+            qd.Enabled = true;
+            qd.Text = "开始更新";
+        }
+
+        private void qd_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("需要再等等", "还没完成");
+        }
     }
 }

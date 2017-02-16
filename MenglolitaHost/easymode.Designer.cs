@@ -32,6 +32,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.qd = new System.Windows.Forms.Button();
+            this.ty = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -61,12 +62,24 @@
             this.qd.Enabled = false;
             this.qd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.qd.ForeColor = System.Drawing.Color.SandyBrown;
-            this.qd.Location = new System.Drawing.Point(151, 68);
+            this.qd.Location = new System.Drawing.Point(164, 68);
             this.qd.Name = "qd";
-            this.qd.Size = new System.Drawing.Size(86, 32);
+            this.qd.Size = new System.Drawing.Size(92, 32);
             this.qd.TabIndex = 13;
-            this.qd.Text = "即将开启";
+            this.qd.Text = "请先同意使用";
             this.qd.UseVisualStyleBackColor = true;
+            this.qd.Click += new System.EventHandler(this.qd_Click);
+            // 
+            // ty
+            // 
+            this.ty.AutoSize = true;
+            this.ty.Location = new System.Drawing.Point(12, 77);
+            this.ty.Name = "ty";
+            this.ty.Size = new System.Drawing.Size(132, 16);
+            this.ty.TabIndex = 14;
+            this.ty.Text = "我同意使用懒人模式";
+            this.ty.UseVisualStyleBackColor = true;
+            this.ty.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // easymode
             // 
@@ -74,7 +87,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(249, 107);
+            this.ClientSize = new System.Drawing.Size(268, 107);
+            this.Controls.Add(this.ty);
             this.Controls.Add(this.qd);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
@@ -96,5 +110,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button qd;
+        private System.Windows.Forms.CheckBox ty;
     }
 }

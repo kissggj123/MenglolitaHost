@@ -70,6 +70,8 @@ namespace MenglolitaHost
             this.hostedit = new System.Windows.Forms.ToolStripMenuItem();
             this.懒人模式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配置懒人模式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.youTube专用hostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouthosts = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,8 +80,6 @@ namespace MenglolitaHost
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.update = new System.Windows.Forms.Button();
-            this.youTube专用hostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelUAC.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -346,7 +346,7 @@ namespace MenglolitaHost
             // hostedit
             // 
             this.hostedit.Name = "hostedit";
-            this.hostedit.Size = new System.Drawing.Size(143, 22);
+            this.hostedit.Size = new System.Drawing.Size(152, 22);
             this.hostedit.Text = "hosts编辑器";
             this.hostedit.Click += new System.EventHandler(this.hostedit_Click);
             // 
@@ -361,9 +361,25 @@ namespace MenglolitaHost
             // 配置懒人模式ToolStripMenuItem
             // 
             this.配置懒人模式ToolStripMenuItem.Name = "配置懒人模式ToolStripMenuItem";
-            this.配置懒人模式ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.配置懒人模式ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.配置懒人模式ToolStripMenuItem.Text = "配置懒人模式";
             this.配置懒人模式ToolStripMenuItem.Click += new System.EventHandler(this.配置懒人模式ToolStripMenuItem_Click);
+            // 
+            // youTube专用hostsToolStripMenuItem
+            // 
+            this.youTube专用hostsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.goHostsToolStripMenuItem});
+            this.youTube专用hostsToolStripMenuItem.Name = "youTube专用hostsToolStripMenuItem";
+            this.youTube专用hostsToolStripMenuItem.Size = new System.Drawing.Size(126, 21);
+            this.youTube专用hostsToolStripMenuItem.Text = "YouTube专用hosts";
+            this.youTube专用hostsToolStripMenuItem.Click += new System.EventHandler(this.youTube专用hostsToolStripMenuItem_Click);
+            // 
+            // goHostsToolStripMenuItem
+            // 
+            this.goHostsToolStripMenuItem.Name = "goHostsToolStripMenuItem";
+            this.goHostsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.goHostsToolStripMenuItem.Text = "GoHosts";
+            this.goHostsToolStripMenuItem.Click += new System.EventHandler(this.goHostsToolStripMenuItem_Click);
             // 
             // abouthosts
             // 
@@ -439,22 +455,6 @@ namespace MenglolitaHost
             this.update.Text = "检查hosts信息";
             this.update.UseVisualStyleBackColor = true;
             this.update.Click += new System.EventHandler(this.update_Click);
-            // 
-            // youTube专用hostsToolStripMenuItem
-            // 
-            this.youTube专用hostsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.goHostsToolStripMenuItem});
-            this.youTube专用hostsToolStripMenuItem.Name = "youTube专用hostsToolStripMenuItem";
-            this.youTube专用hostsToolStripMenuItem.Size = new System.Drawing.Size(126, 21);
-            this.youTube专用hostsToolStripMenuItem.Text = "YouTube专用hosts";
-            this.youTube专用hostsToolStripMenuItem.Click += new System.EventHandler(this.youTube专用hostsToolStripMenuItem_Click);
-            // 
-            // goHostsToolStripMenuItem
-            // 
-            this.goHostsToolStripMenuItem.Name = "goHostsToolStripMenuItem";
-            this.goHostsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.goHostsToolStripMenuItem.Text = "GoHosts";
-            this.goHostsToolStripMenuItem.Click += new System.EventHandler(this.goHostsToolStripMenuItem_Click);
             // 
             // MainForm
             // 

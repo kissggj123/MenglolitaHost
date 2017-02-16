@@ -21,4 +21,3 @@ E:\临时文件\MenglolitaHost\MenglolitaHost\obj\Debug\HOST更新工具.pdb
 E:\临时文件\MenglolitaHost\MenglolitaHost\obj\Debug\MenglolitaHost.AboutBox1.resources
 E:\临时文件\MenglolitaHost\MenglolitaHost\obj\Debug\MenglolitaHost.hostseditor.resources
 E:\临时文件\MenglolitaHost\MenglolitaHost\obj\Debug\MenglolitaHost.easymode.resources
-E:\临时文件\MenglolitaHost\MenglolitaHost\obj\Debug\MenglolitaHOST.csprojResolveAssemblyReference.cache
