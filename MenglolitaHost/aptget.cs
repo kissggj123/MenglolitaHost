@@ -93,7 +93,7 @@ namespace MenglolitaHost
             string apturl = url.Text;
             try
             {
-                this.SafeInvoke(() => { this.qd.Text = "正在更新..."; });
+               this.qd.Text = "正在更新...";
                 var req = (HttpWebRequest)WebRequest.Create(apturl);
                 req.ServicePoint.Expect100Continue = false;
                 req.Method = "GET";
@@ -150,7 +150,7 @@ namespace MenglolitaHost
             {
                 _thread = null;
                 _timer.Enabled = false;
-                this.SafeInvoke(() => { this.qd.Text = "更新已结束"; });
+                this.qd.Text = "更新已结束"; 
             }
         }
 
@@ -163,7 +163,7 @@ namespace MenglolitaHost
                 {
                     try
                     {
-                        this.SafeInvoke(() => { this.qd.Text = "更新已结束"; });
+                        this.qd.Text = "更新已结束"; 
                         _thread.Abort();
                     }
                     catch { }

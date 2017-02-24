@@ -79,7 +79,7 @@ namespace MenglolitaHost
             string apturl = yourshostsurl.Text;
             try
             {
-                this.SafeInvoke(() => { this.yourshostsupdate.Text = "正在更新..."; });
+                this.yourshostsupdate.Text = "正在更新...";
                 var req = (HttpWebRequest)WebRequest.Create(apturl);
                 req.ServicePoint.Expect100Continue = false;
                 req.Method = "GET";
@@ -162,7 +162,7 @@ namespace MenglolitaHost
                 _thread = null;
                 _timer.Enabled = false;
                 yourshostsurl.ReadOnly = false;
-                this.SafeInvoke(() => { this.yourshostsupdate.Text = "更新已结束"; });
+                this.yourshostsupdate.Text = "更新已结束"; 
             }
         }
 
@@ -175,7 +175,7 @@ namespace MenglolitaHost
                 {
                     try
                     {
-                        this.SafeInvoke(() => { this.yourshostsupdate.Text = "更新已结束"; });
+                        this.yourshostsupdate.Text = "更新已结束";
                         _thread.Abort();
                         yourshostsurl.ReadOnly = false;
                     }

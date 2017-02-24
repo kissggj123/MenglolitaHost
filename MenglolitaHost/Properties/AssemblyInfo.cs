@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Host更新工具 by Menglolita 1.5.6 Final Preview Version")]
+[assembly: AssemblyTitle("Host更新工具 by Menglolita 1.5.8 Final Preview Version")]
 [assembly: AssemblyDescription("Menglolita Host")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Menglolita")]
@@ -49,5 +49,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.5.6")]
-[assembly: AssemblyFileVersion("1.5.6")]
+[assembly: AssemblyVersion("1.5.8")]
+[assembly: AssemblyFileVersion("1.5.8")]

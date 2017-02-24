@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -38,11 +39,45 @@ namespace MenglolitaHost
 
         private void restore_Load(object sender, EventArgs e)
         {
+            string Path = AppDomain.CurrentDomain.BaseDirectory + @"\"+"Hostbak";
             hostsbakurl.Visible = false;
+            ts1.Text="";
+            ts2.Text="";
+            ts3.Text="";
             mainhosts.Checked = false;
             otherhosts.Checked = false;
             yourshostsbak.Checked = false;
             restorehosts.Enabled = false;
+            if (File.Exists(Path + @"\" + "hosts"))
+            {
+                mainhosts.Enabled = true;
+                ts1.Text = "可用";
+            }
+            else
+            {
+                mainhosts.Enabled = false;
+                ts1.Text = "不可用";
+            }
+            if (File.Exists(Path + @"\"+"第三方源hosts备份" +@"\" + "hosts"))
+            {
+                otherhosts.Enabled = true;
+                ts2.Text = "可用";
+            }
+            else
+            {
+                otherhosts.Enabled = false;
+                ts2.Text = "不可用";
+            }
+            if (File.Exists(Path + @"\" + "自定义源hosts备份" + @"\" + "hosts"))
+            {
+                yourshostsbak.Enabled = true;
+                ts3.Text = "可用";
+            }
+            else
+            {
+                yourshostsbak.Enabled = false;
+                ts3.Text = "不可用";
+            }
         }
 
 

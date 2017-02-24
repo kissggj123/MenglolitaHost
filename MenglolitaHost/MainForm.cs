@@ -70,7 +70,7 @@ namespace MenglolitaHost
             if (Directory.Exists(Path + @"\" + "yoursHosts"))
             {
                 testhoost.Enabled = true;
-                //hostlk.Enabled = false;
+                hostlk.Enabled = false;
             }
             else
             {
@@ -169,12 +169,12 @@ namespace MenglolitaHost
         {
             try
             {
-                this.SafeInvoke(() => { this.btnUpdate.Text = "正在更新..."; });
+                this.btnUpdate.Text = "正在更新...";
                 var req = (HttpWebRequest)WebRequest.Create(_url);
                 req.ServicePoint.Expect100Continue = false;
                 req.Method = "GET";
                 req.KeepAlive = true;
-                req.UserAgent = "Menglolita Host 1.3";
+                req.UserAgent = "Menglolita Host 1.5.8";
                 req.Timeout = 30 * 1000;
 
                 // 以字符流的方式读取HTTP响应
@@ -213,7 +213,7 @@ namespace MenglolitaHost
             {
                 _thread = null;
                 _timer.Enabled = false;
-                this.SafeInvoke(() => { this.btnUpdate.Text = "更新已结束"; });
+                this.btnUpdate.Text = "更新已结束";
             }
         }
 
@@ -225,7 +225,7 @@ namespace MenglolitaHost
                 {
                     try
                     {
-                        this.SafeInvoke(() => { this.btnUpdate.Text = "更新已结束"; });
+                        this.btnUpdate.Text = "更新已结束";
                         _thread = null;
                         _timer.Enabled = false;
                         _thread.Abort();
@@ -346,19 +346,22 @@ namespace MenglolitaHost
 
         private void testhoost_Click(object sender, EventArgs e)
         {
-            string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "yoursHosts";
-            if (File.Exists(Path2 + @"\" + "hosts"))
+            OpenFileDialog yourshosts = new OpenFileDialog();
+            yourshosts.Filter = "hosts文件(hosts)|*.*";
+            yourshosts.Title = "选择你要替换的hosts文件";
+            yourshosts.FileName = "hosts";
+            String winhosts = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+            if (yourshosts.ShowDialog() == DialogResult.OK)
             {
-                String winhosts = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
-                String yourshosts = Path2 + @"\" + "hosts";
+                if (!System.IO.Directory.Exists(@"C:\\Windows\\System32\\drivers\\etc"))
+                {
+                    // 目录不存在，建立目录
+                    System.IO.Directory.CreateDirectory(@"C:\\Windows\\System32\\drivers\\etc");
+                }
                 bool isrewrite = true; //覆盖已存在的同名文件,false则反之
-                System.IO.File.Copy(yourshosts, winhosts, isrewrite);
-                MessageBox.Show("Hosts写入完成，看看能不能正常工作吧", "搞定", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("你TM在搞事情吗？\r\n哪来的hosts文件\r\n当我瞎吗", "年轻人不要搞事情", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //System.IO.Path.Combine(@"C:\\Windows\\System32\\drivers\\etc", System.IO.Path.GetFileName(yourshosts.FileName)
+                System.IO.File.Copy(yourshosts.FileName, winhosts, isrewrite);
+                MessageBox.Show("hosts替换完成", "已替换", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -382,21 +385,9 @@ namespace MenglolitaHost
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("这是个很危(wu)险(liao)的操作\r\n该操作不可逆", "年轻人不要想着搞个大新闻", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "yoursHosts";
-            if (!System.IO.Directory.Exists(Path + @"\" + "yoursHosts"))
-            {
-                // 目录不存在，建立目录
-                System.IO.Directory.CreateDirectory(Path + @"\" + "yoursHosts");
-                testhoost.Enabled = true;
-                System.Diagnostics.Process.Start(Path2);
-            }
-            else
-            {
-                System.Diagnostics.Process.Start(Path2);
-            }
-
+            testhoost.Enabled = true;
+            MessageBox.Show("替换功能已开启", "功能已开启", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            hostlk.Enabled = false;
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -509,25 +500,54 @@ namespace MenglolitaHost
                 MessageBox.Show("Hosts恢复完成", "年轻人继续搞事情", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-    }
 
-    public static class ControlExtention
-    {
-        public delegate void InvokeHandler();
-
-        public static void SafeInvoke(this Control control, InvokeHandler handler)
+        private void bughosts_Click(object sender, EventArgs e)
         {
-            if (control.InvokeRequired)
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Confion" + @"\" + "debug";
+            if (!System.IO.Directory.Exists(Path + @"\" + "Confion"))
             {
-                control.Invoke(handler);
+                // 目录不存在，建立目录
+                MessageBox.Show("备份的文件被你吃了嘛", "你别骗我");
+                //return;
             }
             else
             {
-                handler();
+                String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                String bakPath = Path2 + @"\" + "hosts";
+                bool isrewrite = true; //覆盖已存在的同名文件,false则反之
+                System.IO.File.Copy(bakPath, oldPath, isrewrite);
+                MessageBox.Show("已修复不正常的hosts\n\r为保证正常使用\n\r请尽快更新为最新的hosts", "暂时帮你修复了问题", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void mlHostupdate_Click(object sender, EventArgs e)
+        {
+            Form update = new update();
+            update.ShowDialog();
         }
     }
 }
+    
+
+        /*public static class ControlExtention
+        {
+            public delegate void InvokeHandler();
+
+            public static void SafeInvoke(this Control control, InvokeHandler handler)
+            {
+                if (control.InvokeRequired)
+                {
+                    control.Invoke(handler);
+                }
+                else
+                {
+                    handler();
+                }
+            }
+        }
+    }
+}*/
         
  
     

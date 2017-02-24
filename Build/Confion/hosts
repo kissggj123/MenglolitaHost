@@ -1,5 +1,5 @@
 # Go Hosts
-# 2017-02-15 23:48:24
+# 2017-02-18 22:46:25
 
 
 127.0.0.1	localhost
@@ -669,8 +669,8 @@
 219.76.4.4	g.co
 219.76.4.4	www.google.org
 219.76.4.4	blog.google.org
-216.58.208.151	panoramio.com
-216.58.208.151	www.panoramio.com
+219.76.4.4	panoramio.com
+219.76.4.4	www.panoramio.com
 64.233.189.128	static.panoramio.com
 219.76.4.4	blog.panoramio.com
 219.76.4.4	www.recaptcha.net
@@ -2085,8 +2085,8 @@
 219.76.4.4	i9.ytimg.com
 219.76.4.4	s.ytimg.com
 219.76.4.4	manifest.googlevideo.com
-64.233.162.83	onetoday.google.com
-64.233.162.83	notifications.google.com
+219.76.4.4	onetoday.google.com
+219.76.4.4	notifications.google.com
 219.76.4.4	google.ad
 219.76.4.4	google.ae
 219.76.4.4	google.al
@@ -7062,7 +7062,7 @@
 157.240.0.17 static.facebook.com
 157.240.0.17 s-static.facebook.com
 157.240.0.17 static.thefacebook.com
-173.252.105.21 d.facebook.com
+173.252.105.3 d.facebook.com
 157.240.0.17	m.facebook.com
 157.240.0.17    mqtt.facebook.com
 157.240.0.17	mqtt-mini.facebook.com
@@ -7566,15 +7566,15 @@
 149.154.167.124  vesta.web.telegram.org
 149.154.167.124  vesta-1.web.telegram.org
 149.154.167.118  telegram.me
-108.160.173.233	db.tt
+52.29.64.168	db.tt
 52.29.64.168	dropbox.com
 52.29.64.168	www.dropbox.com
-108.160.173.233	m.dropbox.com
+52.29.64.168	m.dropbox.com
 108.160.173.162	dl-debug.dropbox.com
 52.85.76.60	linux.dropbox.com
 108.160.172.225 d.dropbox.com
 108.160.172.225 d.v.dropbox.com
-162.125.18.132	dl-doc.dropbox.com
+108.160.172.69	dl-doc.dropbox.com
 108.160.172.225 api-d.dropbox.com
 108.160.172.225 api.dropboxapi.com
 108.160.172.225 api.dropbox.com
@@ -7611,7 +7611,7 @@
 108.160.172.227	log.getdropbox.com
 192.0.79.32	code.flickr.com
 119.161.10.150	api.flickr.com
-119.161.9.151	c5.ah.yahoo.com
+106.10.193.20	c5.ah.yahoo.com
 119.160.254.215	d.yimg.com
 106.10.136.195	de.yahoo.com
 119.160.254.215	e.yimg.com
@@ -7653,7 +7653,7 @@
 203.84.197.27	lh.secure.yahoo.com
 106.10.199.10	hk.news.yahoo.com
 106.10.138.240	hk.yahoo.com
-206.190.39.139	hsrd.yahoo.com
+206.190.37.105	hsrd.yahoo.com
 106.10.193.20	hk-mg61.mail.yahoo.com
 119.160.254.215	l.yimg.com
 106.10.193.20	login.yahoo.com
@@ -7664,7 +7664,7 @@
 106.10.193.20	open.login.yahoo.com
 68.142.230.88	overview.mail.yahoo.com
 119.160.254.215	p.yimg.com
-216.115.100.106	s.yimg.com
+115.178.9.18	s.yimg.com
 119.160.254.215	s1.yimg.com
 106.10.193.20	sa.edit.yahoo.com
 208.71.44.31	secure.flickr.com
@@ -7785,7 +7785,7 @@
 151.101.100.64	glitter.services.disqus.com
 151.101.100.64	links.services.disqus.com
 173.192.82.196	realtime.services.disqus.com
-50.18.249.249	help.disqus.com
+23.65.183.218	help.disqus.com
 23.65.183.218	about.disqus.com
 23.65.183.218	blog.disqus.com
 23.65.183.218	publishers.disqus.com
@@ -7794,7 +7794,7 @@
 50.18.192.250	ac.duckduckgo.com
 54.229.110.205	icons.duckduckgo.com
 54.229.110.205	images.duckduckgo.com
-96.45.83.209	help.duckduckgo.com
+50.18.192.250	help.duckduckgo.com
 192.30.253.118	gist.github.com
 151.101.100.193	imgur.com
 151.101.100.193	m.imgur.com
@@ -7932,7 +7932,7 @@
 154.35.132.70	onion.torproject.org
 78.47.38.227	onionoo.torproject.org
 154.35.132.70	ooni.torproject.org
-52.70.141.81	explorer.ooni.torproject.org
+37.218.242.173	explorer.ooni.torproject.org
 138.201.14.203	people.torproject.org
 154.35.132.70	research.torproject.org
 138.201.212.230	rt.torproject.org

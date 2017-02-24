@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Menglolita Host--hosts更新工具"
-#define MyAppVersion "1.5.6 final preview"
+#define MyAppVersion "1.5.8 final preview"
 #define MyAppPublisher "Menglolita"
 #define MyAppURL "https://github.com/kissggj123/MenglolitaHost/releases"
 #define MyAppExeName "HOST更新工具.exe"
@@ -23,7 +23,7 @@ DefaultDirName={pf}\Menglolita Host
 DisableProgramGroupPage=yes
 DisableWelcomePage=false
 OutputDir=E:\临时文件\MenglolitaHost\package
-OutputBaseFilename=Menglolita hosts更新工具 1.5.6 final（YouTube专版）
+OutputBaseFilename=Menglolita hosts更新工具 1.5.8 final（YouTube专版）
 SetupIconFile=E:\临时文件\MenglolitaHost\MenglolitaHost\ic_launcher.ico
 Compression=lzma
 SolidCompression=yes
@@ -46,7 +46,7 @@ begin
 end;
 
 [Messages]
-BeveledLabel=开发者@北斗家老司机  版本@1.5.6 final急救版
+BeveledLabel=开发者@北斗家老司机  版本@1.5.7 final YouTube专版
 ClickNext=单击“下一步”继续，或单击“取消”退出安装程序。%n%n%n%n%n%n%n%n该程序仅供研究（真的是随便写的）%n%n如有问题请拍砖自menglolita@menglolita.com%n%nGithub@Kissggj123
 
 [Tasks]

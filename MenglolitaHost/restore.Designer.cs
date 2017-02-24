@@ -35,6 +35,9 @@
             this.otherhosts = new System.Windows.Forms.RadioButton();
             this.hostsbakurl = new System.Windows.Forms.Label();
             this.yourshostsbak = new System.Windows.Forms.RadioButton();
+            this.ts1 = new System.Windows.Forms.Label();
+            this.ts2 = new System.Windows.Forms.Label();
+            this.ts3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -106,6 +109,36 @@
             this.yourshostsbak.UseVisualStyleBackColor = true;
             this.yourshostsbak.CheckedChanged += new System.EventHandler(this.yourshostsbak_CheckedChanged);
             // 
+            // ts1
+            // 
+            this.ts1.AutoSize = true;
+            this.ts1.ForeColor = System.Drawing.Color.Red;
+            this.ts1.Location = new System.Drawing.Point(166, 43);
+            this.ts1.Name = "ts1";
+            this.ts1.Size = new System.Drawing.Size(29, 12);
+            this.ts1.TabIndex = 13;
+            this.ts1.Text = "可用";
+            // 
+            // ts2
+            // 
+            this.ts2.AutoSize = true;
+            this.ts2.ForeColor = System.Drawing.Color.Red;
+            this.ts2.Location = new System.Drawing.Point(223, 71);
+            this.ts2.Name = "ts2";
+            this.ts2.Size = new System.Drawing.Size(29, 12);
+            this.ts2.TabIndex = 14;
+            this.ts2.Text = "可用";
+            // 
+            // ts3
+            // 
+            this.ts3.AutoSize = true;
+            this.ts3.ForeColor = System.Drawing.Color.Red;
+            this.ts3.Location = new System.Drawing.Point(234, 100);
+            this.ts3.Name = "ts3";
+            this.ts3.Size = new System.Drawing.Size(29, 12);
+            this.ts3.TabIndex = 15;
+            this.ts3.Text = "可用";
+            // 
             // restore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -113,6 +146,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(282, 171);
+            this.Controls.Add(this.ts3);
+            this.Controls.Add(this.ts2);
+            this.Controls.Add(this.ts1);
             this.Controls.Add(this.yourshostsbak);
             this.Controls.Add(this.hostsbakurl);
             this.Controls.Add(this.otherhosts);
@@ -141,5 +177,8 @@
         private System.Windows.Forms.RadioButton otherhosts;
         private System.Windows.Forms.Label hostsbakurl;
         private System.Windows.Forms.RadioButton yourshostsbak;
+        private System.Windows.Forms.Label ts1;
+        private System.Windows.Forms.Label ts2;
+        private System.Windows.Forms.Label ts3;
     }
 }
