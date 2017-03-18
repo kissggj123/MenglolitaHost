@@ -123,6 +123,9 @@ namespace MenglolitaHost
                             p.StandardInput.WriteLine(str + "&exit");
                             p.StandardInput.AutoFlush = true;
                             //Directory.CreateDirectory(Path3);
+                            _thread = null;
+                            _timer.Enabled = false;
+                            this.yourshostsupdate.Text = "更新已结束";
                             MessageBox.Show("更新自定义源hosts成功", "已完工", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
@@ -162,7 +165,7 @@ namespace MenglolitaHost
                 _thread = null;
                 _timer.Enabled = false;
                 yourshostsurl.ReadOnly = false;
-                this.yourshostsupdate.Text = "更新已结束"; 
+                this.yourshostsupdate.Text = "开始更新"; 
             }
         }
 

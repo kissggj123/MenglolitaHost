@@ -1,0 +1,135 @@
+﻿2017-03-18 18:20:53.604 - ShareX 11.6 Portable
+2017-03-18 18:20:53.615 - Command line: "E:\临时文件\MenglolitaHost\ShareX\poable\ShareX.exe" 
+2017-03-18 18:20:53.617 - Personal path: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX
+2017-03-18 18:20:53.619 - Build: Release
+2017-03-18 18:20:53.621 - Operating system: Windows 10 Pro
+2017-03-18 18:20:53.623 - Flags: Portable
+2017-03-18 18:20:53.663 - ApplicationConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 18:20:53.665 - ApplicationConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json.bak
+2017-03-18 18:20:53.678 - ApplicationConfig not found. Loading new instance.
+2017-03-18 18:20:54.160 - UploadersConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 18:20:54.162 - UploadersConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json.bak
+2017-03-18 18:20:54.164 - UploadersConfig not found. Loading new instance.
+2017-03-18 18:20:54.177 - MainForm init started
+2017-03-18 18:20:54.190 - HotkeysConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 18:20:54.193 - HotkeysConfig not found. Loading new instance.
+2017-03-18 18:20:54.196 - HotkeysConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json.bak
+2017-03-18 18:20:55.316 - MainForm init finished
+2017-03-18 18:20:55.770 - Startup time: 2701 ms
+2017-03-18 18:20:55.887 - Hotkey registered: Hotkey: Ctrl + Print Screen, Description: 捕捉矩形区域, Job: RectangleRegion
+2017-03-18 18:20:55.889 - Hotkey registered: Hotkey: Print Screen, Description: 捕捉整个屏幕, Job: PrintScreen
+2017-03-18 18:20:55.891 - Hotkey registered: Hotkey: Alt + Print Screen, Description: 捕捉活动窗口, Job: ActiveWindow
+2017-03-18 18:20:55.893 - Hotkey registered: Hotkey: Shift + Print Screen, Description: 屏幕录制, Job: ScreenRecorder
+2017-03-18 18:20:55.894 - HotkeyManager started
+2017-03-18 18:20:55.896 - WatchFolderManager started
+2017-03-18 18:21:47.969 - HotkeysConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 18:21:47.974 - UploadersConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 18:21:47.977 - ApplicationConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 18:21:49.152 - HotkeysConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 18:21:49.254 - ApplicationConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 18:21:49.272 - UploadersConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 18:56:03.573 - Executing: 打开主页面
+2017-03-18 18:56:06.115 - Hotkey unregistered: Hotkey: Ctrl + Print Screen, Description: 捕捉矩形区域, Job: RectangleRegion
+2017-03-18 18:56:06.117 - Hotkey unregistered: Hotkey: Print Screen, Description: 捕捉整个屏幕, Job: PrintScreen
+2017-03-18 18:56:06.120 - Hotkey unregistered: Hotkey: Alt + Print Screen, Description: 捕捉活动窗口, Job: ActiveWindow
+2017-03-18 18:56:06.124 - Hotkey unregistered: Hotkey: Shift + Print Screen, Description: 屏幕录制, Job: ScreenRecorder
+2017-03-18 18:56:06.183 - ApplicationConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 18:56:06.513 - ApplicationConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 18:56:06.514 - UploadersConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 18:56:06.626 - UploadersConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 18:56:06.628 - HotkeysConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 18:56:06.789 - HotkeysConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 18:56:06.873 - ShareX closing
+2017-03-18 19:26:29.293 - ShareX 11.6 Portable
+2017-03-18 19:26:29.324 - Personal path: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX
+2017-03-18 19:26:29.326 - Build: Release
+2017-03-18 19:26:29.328 - Command line: "E:\临时文件\MenglolitaHost\ShareX\poable\ShareX.exe" 
+2017-03-18 19:26:29.330 - Operating system: Windows 10 Pro
+2017-03-18 19:26:29.335 - Flags: Portable
+2017-03-18 19:26:29.338 - ApplicationConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 19:26:30.437 - ApplicationConfig load finished: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 19:26:30.443 - UploadersConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 19:26:30.447 - MainForm init started
+2017-03-18 19:26:30.741 - UploadersConfig load finished: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 19:26:30.743 - HotkeysConfig load started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 19:26:30.876 - HotkeysConfig load finished: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 19:26:31.376 - MainForm init finished
+2017-03-18 19:26:31.671 - Startup time: 2474 ms
+2017-03-18 19:26:31.752 - Hotkey registered: Hotkey: Ctrl + Print Screen, Description: 捕捉矩形区域, Job: RectangleRegion
+2017-03-18 19:26:31.753 - Hotkey registered: Hotkey: Print Screen, Description: 捕捉整个屏幕, Job: PrintScreen
+2017-03-18 19:26:31.755 - Hotkey registered: Hotkey: Alt + Print Screen, Description: 捕捉活动窗口, Job: ActiveWindow
+2017-03-18 19:26:31.757 - Hotkey registered: Hotkey: Shift + Print Screen, Description: 屏幕录制, Job: ScreenRecorder
+2017-03-18 19:26:31.758 - HotkeyManager started
+2017-03-18 19:26:31.760 - WatchFolderManager started
+2017-03-18 19:26:50.328 - ApplicationConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 19:26:50.359 - HotkeysConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 19:26:50.361 - UploadersConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 19:26:50.592 - UploadersConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 19:26:50.721 - HotkeysConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 19:26:50.757 - ApplicationConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 19:27:50.225 - Hotkey unregistered: Hotkey: Print Screen, Description: 捕捉整个屏幕, Job: PrintScreen
+2017-03-18 19:27:50.227 - Hotkey unregistered: Hotkey: Alt + Print Screen, Description: 捕捉活动窗口, Job: ActiveWindow
+2017-03-18 19:27:50.230 - Hotkey unregistered: Hotkey: Shift + Print Screen, Description: 屏幕录制, Job: ScreenRecorder
+2017-03-18 19:27:50.239 - Hotkey unregistered: Hotkey: Ctrl + Print Screen, Description: 捕捉矩形区域, Job: RectangleRegion
+2017-03-18 19:27:50.249 - ApplicationConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 19:27:50.503 - ApplicationConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\ApplicationConfig.json
+2017-03-18 19:27:50.506 - UploadersConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 19:27:50.624 - UploadersConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\UploadersConfig.json
+2017-03-18 19:27:50.626 - HotkeysConfig save started: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 19:27:50.868 - HotkeysConfig save successful: E:\临时文件\MenglolitaHost\ShareX\poable\ShareX\HotkeysConfig.json
+2017-03-18 19:27:50.876 - ShareX closing
+2017-03-18 19:35:19.156 - ApplicationConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:35:19.166 - UploadersConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:35:19.170 - HotkeysConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:35:19.374 - UploadersConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:35:19.460 - HotkeysConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:35:19.496 - ApplicationConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:35:32.721 - Hotkey unregistered: Hotkey: Ctrl + Print Screen, Description: Capture region, Job: RectangleRegion
+2017-03-18 19:35:32.724 - Hotkey unregistered: Hotkey: Shift + Print Screen, Description: Start/Stop screen recording, Job: ScreenRecorder
+2017-03-18 19:35:32.728 - Hotkey unregistered: Hotkey: Print Screen, Description: Capture entire screen, Job: PrintScreen
+2017-03-18 19:35:32.740 - Hotkey unregistered: Hotkey: Alt + Print Screen, Description: Capture active window, Job: ActiveWindow
+2017-03-18 19:35:32.747 - ApplicationConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:35:32.941 - ApplicationConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:35:32.943 - UploadersConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:35:33.056 - UploadersConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:35:33.059 - HotkeysConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:35:33.208 - HotkeysConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:35:33.225 - ShareX closing
+2017-03-18 19:36:33.920 - Command line: "E:\临时文件\MenglolitaHost\Build\bin\ShareX.exe" 
+2017-03-18 19:36:33.923 - Personal path: E:\临时文件\MenglolitaHost\Build\bin\ShareX
+2017-03-18 19:36:33.925 - Build: Release
+2017-03-18 19:36:33.927 - Operating system: Windows 10 Pro
+2017-03-18 19:36:33.935 - Flags: Portable
+2017-03-18 19:36:33.938 - ShareX 11.6 Portable
+2017-03-18 19:36:33.953 - ApplicationConfig load started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:36:34.775 - ApplicationConfig load finished: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:36:34.779 - UploadersConfig load started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:36:34.782 - MainForm init started
+2017-03-18 19:36:35.024 - UploadersConfig load finished: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:36:35.029 - HotkeysConfig load started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:36:35.115 - HotkeysConfig load finished: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:36:35.630 - MainForm init finished
+2017-03-18 19:36:35.876 - Startup time: 2027 ms
+2017-03-18 19:36:35.956 - Hotkey registered: Hotkey: Ctrl + Print Screen, Description: 捕捉矩形区域, Job: RectangleRegion
+2017-03-18 19:36:35.958 - Hotkey registered: Hotkey: Print Screen, Description: 捕捉整个屏幕, Job: PrintScreen
+2017-03-18 19:36:35.960 - Hotkey registered: Hotkey: Alt + Print Screen, Description: 捕捉活动窗口, Job: ActiveWindow
+2017-03-18 19:36:35.962 - Hotkey registered: Hotkey: Shift + Print Screen, Description: 屏幕录制, Job: ScreenRecorder
+2017-03-18 19:36:35.964 - HotkeyManager started
+2017-03-18 19:36:35.966 - WatchFolderManager started
+2017-03-18 19:36:37.872 - UploadersConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:36:37.874 - UploadersConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:36:37.879 - ApplicationConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:36:37.881 - HotkeysConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:36:37.955 - HotkeysConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:36:38.004 - ApplicationConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:36:46.092 - Hotkey unregistered: Hotkey: Ctrl + Print Screen, Description: 捕捉矩形区域, Job: RectangleRegion
+2017-03-18 19:36:46.095 - Hotkey unregistered: Hotkey: Shift + Print Screen, Description: 屏幕录制, Job: ScreenRecorder
+2017-03-18 19:36:46.102 - Hotkey unregistered: Hotkey: Print Screen, Description: 捕捉整个屏幕, Job: PrintScreen
+2017-03-18 19:36:46.106 - Hotkey unregistered: Hotkey: Alt + Print Screen, Description: 捕捉活动窗口, Job: ActiveWindow
+2017-03-18 19:36:46.131 - ApplicationConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:36:46.321 - ApplicationConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\ApplicationConfig.json
+2017-03-18 19:36:46.323 - UploadersConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:36:46.425 - UploadersConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\UploadersConfig.json
+2017-03-18 19:36:46.427 - HotkeysConfig save started: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:36:46.613 - HotkeysConfig save successful: E:\临时文件\MenglolitaHost\Build\bin\ShareX\HotkeysConfig.json
+2017-03-18 19:36:46.625 - ShareX closing

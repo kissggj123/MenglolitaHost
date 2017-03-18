@@ -110,7 +110,7 @@
             this.clean.Name = "clean";
             this.clean.Size = new System.Drawing.Size(99, 39);
             this.clean.TabIndex = 23;
-            this.clean.Text = "清理升级文件";
+            this.clean.Text = "清理更新缓存";
             this.clean.UseVisualStyleBackColor = false;
             this.clean.Click += new System.EventHandler(this.button1_Click);
             // 

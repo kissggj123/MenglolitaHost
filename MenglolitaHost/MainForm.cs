@@ -84,10 +84,10 @@ namespace MenglolitaHost
             }
             else
             {
-                restore.Enabled = false;
+                restore.Enabled = true;
             }
 
-            if (File.Exists(Path + "Mhost.sl"))
+            if (File.Exists(Path + "moshost.thk"))
             {
                 zhuabao.Enabled = true;
                 WinPcap.Enabled = true;
@@ -199,6 +199,9 @@ namespace MenglolitaHost
                         p.StandardInput.WriteLine(str + "&exit");
                         p.StandardInput.AutoFlush = true;
                         //p.StandardInput.WriteLine("exit");
+                        _thread = null;
+                        _timer.Enabled = false;
+                        this.btnUpdate.Text = "更新已结束";
                         MessageBox.Show("更新成功", "已完工", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnUpdate.Enabled = true;
                     }
@@ -213,7 +216,7 @@ namespace MenglolitaHost
             {
                 _thread = null;
                 _timer.Enabled = false;
-                this.btnUpdate.Text = "更新已结束";
+                this.btnUpdate.Text = "更新hosts";
             }
         }
 
@@ -317,7 +320,7 @@ namespace MenglolitaHost
         private void button1_Click(object sender, EventArgs e)
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            if (File.Exists(Path + "Mhost.sl"))
+            if (File.Exists(Path + "moshost.thk"))
             {
                 this.Text = "（" + "当前为开发者模式" + ")"; ;
             }
@@ -344,7 +347,7 @@ namespace MenglolitaHost
             aptget.ShowDialog();
         }
 
-        private void testhoost_Click(object sender, EventArgs e)
+        /*private void testhoost_Click(object sender, EventArgs e)
         {
             OpenFileDialog yourshosts = new OpenFileDialog();
             yourshosts.Filter = "hosts文件(hosts)|*.*";
@@ -363,7 +366,7 @@ namespace MenglolitaHost
                 System.IO.File.Copy(yourshosts.FileName, winhosts, isrewrite);
                 MessageBox.Show("hosts替换完成", "已替换", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
+        }*/
 
         private void restore_Click(object sender, EventArgs e)
         {
@@ -526,8 +529,86 @@ namespace MenglolitaHost
             Form update = new update();
             update.ShowDialog();
         }
+
+        private void testhoost_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog yourshosts = new OpenFileDialog();
+            yourshosts.Filter = "hosts文件(hosts)|*.*";
+            yourshosts.Title = "选择你要替换的hosts文件";
+            yourshosts.FileName = "hosts";
+            String winhosts = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+            if (yourshosts.ShowDialog() == DialogResult.OK)
+            {
+                if (!System.IO.Directory.Exists(@"C:\\Windows\\System32\\drivers\\etc"))
+                {
+                    // 目录不存在，建立目录
+                    System.IO.Directory.CreateDirectory(@"C:\\Windows\\System32\\drivers\\etc");
+                }
+                bool isrewrite = true; //覆盖已存在的同名文件,false则反之
+                //System.IO.Path.Combine(@"C:\\Windows\\System32\\drivers\\etc", System.IO.Path.GetFileName(yourshosts.FileName)
+                System.IO.File.Copy(yourshosts.FileName, winhosts, isrewrite);
+                MessageBox.Show("hosts替换完成", "已替换", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            if (File.Exists(Path + "bin" + @"\" + "setDNS.exe"))
+            {
+                Process proc = new Process();
+                proc.StartInfo.FileName = Path + "bin" + @"\" + "setDNS.exe";
+                proc.Start();
+            }
+            else
+            {
+                MessageBox.Show("无法进行修改DNS", "无法启动该功能", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ShareX_Click(object sender, EventArgs e)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            if (File.Exists(Path + "bin" + @"\" + "ShareX.exe"))
+            {
+                Process proc = new Process();
+                proc.StartInfo.FileName = Path + "bin" + @"\" + "ShareX.exe";
+                proc.Start();
+            }
+            else
+            {
+                MessageBox.Show("这是个特麻烦的问题", "反正就是无法启动", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Confion" + @"\" + "debug";
+            if (!System.IO.Directory.Exists(Path + @"\" + "Confion"))
+            {
+                // 目录不存在，建立目录
+                MessageBox.Show("备份的文件被你吃了嘛", "你别骗我");
+                //return;
+            }
+            else
+            {
+                String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                String bakPath = Path2 + @"\" + "hosts";
+                bool isrewrite = true; //覆盖已存在的同名文件,false则反之
+                System.IO.File.Copy(bakPath, oldPath, isrewrite);
+                MessageBox.Show("已修复不正常的hosts\n\r你的hosts已经变为初始文件\n\r你也可以继续更新为最新的hosts", "暂时帮你修复了问题", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void edithosts_Click(object sender, EventArgs e)
+        {
+            Form hostseditor = new hostseditor();
+            hostseditor.Show();
+        }
     }
-}
+        }
+    
     
 
         /*public static class ControlExtention

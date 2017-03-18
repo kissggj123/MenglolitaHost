@@ -34,7 +34,7 @@ namespace MenglolitaHost
         {
             //comboBox1ItemIndex = 0
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            if (File.Exists(Path + "Mhost.sl"))
+            if (File.Exists(Path + "moshost.thk"))
             {
                 moreapt.Visible = true;
                 moreapt.Enabled = true;
@@ -121,6 +121,9 @@ namespace MenglolitaHost
                         //向cmd窗口发送输入信息
                         p.StandardInput.WriteLine(str + "&exit");
                         p.StandardInput.AutoFlush = true;
+                        _thread = null;
+                        _timer.Enabled = false;
+                        this.qd.Text = "更新已结束"; 
                         MessageBox.Show("更新第三方源成功", "已完工", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Hostbak" + @"\" + "第三方源hosts备份";
                         /*string Path = AppDomain.CurrentDomain.BaseDirectory;
@@ -150,7 +153,7 @@ namespace MenglolitaHost
             {
                 _thread = null;
                 _timer.Enabled = false;
-                this.qd.Text = "更新已结束"; 
+                this.qd.Text = "开始更新"; 
             }
         }
 

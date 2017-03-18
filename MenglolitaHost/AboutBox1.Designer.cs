@@ -64,11 +64,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(158, 32);
+            this.label5.Location = new System.Drawing.Point(227, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 17);
+            this.label5.Size = new System.Drawing.Size(87, 17);
             this.label5.TabIndex = 16;
-            this.label5.Text = "版本 1.5.8 Final Preview Version";
+            this.label5.Text = "版本 1.6 Final";
             // 
             // textBox1
             // 
@@ -79,7 +79,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(486, 125);
+            this.textBox1.Size = new System.Drawing.Size(488, 125);
             this.textBox1.TabIndex = 17;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -40,6 +40,11 @@ namespace MenglolitaHost
                 Process proc = new Process();
                 proc.StartInfo.FileName = Path2 + @"\" + "Hosts update.exe";
                 proc.Start();
+                label1.Text = "安装结束后请点击 清理更新缓存 进行清理临时文件";
+                label2.Text = "";
+                updateexe.Enabled = false;
+                updateexe.Text = "已更新";
+
             }
             else
             {
@@ -51,8 +56,10 @@ namespace MenglolitaHost
         public void DownloadFile(string URL, string filename, System.Windows.Forms.ProgressBar prog, System.Windows.Forms.Label label1)
         {
             float percent = 0;
+            //为了防止线程的卡死做了内存回收和url连接数量的的优化
             try
             {
+                System.Net.ServicePointManager.DefaultConnectionLimit = 200;
                 System.Net.HttpWebRequest Myrq = (System.Net.HttpWebRequest)System.Net.HttpWebRequest.Create(URL);
                 System.Net.HttpWebResponse myrp = (System.Net.HttpWebResponse)Myrq.GetResponse();
                 long totalBytes = myrp.ContentLength;
@@ -70,8 +77,10 @@ namespace MenglolitaHost
                     totalDownloadedByte = osize + totalDownloadedByte;
                     System.Windows.Forms.Application.DoEvents();
                     so.Write(by, 0, osize);
+                    System.GC.Collect();
                     if (prog != null)
                     {
+                        System.GC.Collect();
                         prog.Value = (int)totalDownloadedByte;
                     }
                     osize = st.Read(by, 0, (int)by.Length);
@@ -79,19 +88,25 @@ namespace MenglolitaHost
                     percent = (float)totalDownloadedByte / (float)totalBytes * 100;
                     label1.Text = "正在下载更新包";
                     label2.Text = percent.ToString() + "%";
+                    updateexe.Text = "正在下载";
                     updateexe.Enabled = false;
                     System.Windows.Forms.Application.DoEvents(); //必须加注这句代码，否则label1将因为循环执行太快而来不及显示信息
                 }
                 so.Close();
                 st.Close();
-                label1.Text = "下载完成";
+                label1.Text = "下载完成，点击 安装更新 进行安装更新包";
                 label2.Text = "";
+                updateexe.Enabled = true;
+                updateexe.Text = "安装更新";
             }
             catch (System.Exception)
             {
                 throw;
             }
         }
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {

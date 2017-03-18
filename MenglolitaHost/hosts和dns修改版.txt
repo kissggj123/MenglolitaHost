@@ -1,0 +1,38 @@
+第一种方法：更改hosts（适合轻度用户，也可用群内老司机自制的更新hosts软件）缺点：不可看youtube，以前可看youtube的hosts
+作者最近没有维护。
+hosts地址：
+1、https://github.com/racaljk/hosts（推荐）
+2、https://serve.netsh.org/pub/ipv4-hosts/
+3、https://raw.githubusercontent.com/vokins/yhosts/master/hosts
+第二种方法：更改dns
+一、Mogu DNS
+
+官方网站 – 科学上网+广告过滤
+
+北方推荐：122.114.245.45
+
+南方推荐：115.159.96.69
+
+二、Pure DNS
+
+官方网站 – 科学上网+广告过滤
+
+北方推荐：123.207.137.88
+
+南方推荐：115.159.220.214
+
+三、CuteDNS
+DNS 1 : 123.206.61.167（北方 / 主）
+
+DNS 2：120.27.103.230（南方 / 辅）
+
+
+四、中科大DNS（此dns对学校网络十分友好，家里的网络基本不可用，自测）
+202.38.93.153 （教育网）
+202.141.176.93 （中国移动）
+202.141.162.123 （中国电信）
+
+
+其余不可翻墙的公共dns，可参考该网站https://dns.xuanlove.net/
+（至于为什么用公共DNS好点呢，自己百度或者google）其实就是避免运营商的广告，以及劫持。
+
