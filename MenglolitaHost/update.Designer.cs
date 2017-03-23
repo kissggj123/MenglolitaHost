@@ -71,7 +71,7 @@
             this.updateexe.Name = "updateexe";
             this.updateexe.Size = new System.Drawing.Size(99, 39);
             this.updateexe.TabIndex = 19;
-            this.updateexe.Text = "更新程序";
+            this.updateexe.Text = "更新&&修复";
             this.updateexe.UseVisualStyleBackColor = false;
             this.updateexe.Click += new System.EventHandler(this.updateexe_Click);
             // 
@@ -110,7 +110,7 @@
             this.clean.Name = "clean";
             this.clean.Size = new System.Drawing.Size(99, 39);
             this.clean.TabIndex = 23;
-            this.clean.Text = "清理更新缓存";
+            this.clean.Text = "清理缓存";
             this.clean.UseVisualStyleBackColor = false;
             this.clean.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -135,7 +135,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "更新升级";
+            this.Text = "更新&修复";
             this.Load += new System.EventHandler(this.update_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

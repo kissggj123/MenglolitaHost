@@ -67,7 +67,7 @@ namespace MenglolitaHost
         private void MainForm_Load(object sender, EventArgs e)
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            if (Directory.Exists(Path + @"\" + "yoursHosts"))
+            /*if (Directory.Exists(Path + @"\" + "yoursHosts"))
             {
                 testhoost.Enabled = true;
                 hostlk.Enabled = false;
@@ -85,7 +85,7 @@ namespace MenglolitaHost
             else
             {
                 restore.Enabled = true;
-            }
+            }*/
 
             if (File.Exists(Path + "moshost.thk"))
             {
@@ -432,11 +432,11 @@ namespace MenglolitaHost
             hostseditor.Show();
         }
 
-        private void 配置懒人模式ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form easymode = new easymode();
-            easymode.ShowDialog();
-        }
+        //private void 配置懒人模式ToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+            //Form easymode = new easymode();
+            //easymode.ShowDialog();
+        //}
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -605,6 +605,34 @@ namespace MenglolitaHost
         {
             Form hostseditor = new hostseditor();
             hostseditor.Show();
+        }
+
+        private void 更新hostsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnUpdate.Enabled = false;
+            if (_thread != null)
+            {
+                return;
+            }
+
+            _thread = new Thread(new ThreadStart(DoUpdate));
+            _thread.Start();
+            _timer.Enabled = true;
+        }
+
+        private void 更新dnsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            if (File.Exists(Path + "bin" + @"\" + "setDNS.exe"))
+            {
+                Process proc = new Process();
+                proc.StartInfo.FileName = Path + "bin" + @"\" + "setDNS.exe";
+                proc.Start();
+            }
+            else
+            {
+                MessageBox.Show("无法进行修改DNS", "无法启动该功能", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
         }

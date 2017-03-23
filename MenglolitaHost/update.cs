@@ -20,6 +20,17 @@ namespace MenglolitaHost
 
         private void update_Load(object sender, EventArgs e)
         {
+            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "update";
+            if (File.Exists(Path2 + @"\" + "Hosts update.exe"))
+            {
+                updateexe.Enabled = false;
+                clean.Enabled = true;
+            }
+            else
+            {
+                updateexe.Enabled = true;
+                clean.Enabled = false;
+            }
             FileVersionInfo myFileVersion = FileVersionInfo.GetVersionInfo(System.Windows.Forms.Application.ExecutablePath);
             version2.Text = "当前程序版本："+myFileVersion.FileVersion; 
             version.Text = "当前组件版本："+System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -40,7 +51,7 @@ namespace MenglolitaHost
                 Process proc = new Process();
                 proc.StartInfo.FileName = Path2 + @"\" + "Hosts update.exe";
                 proc.Start();
-                label1.Text = "安装结束后请点击 清理更新缓存 进行清理临时文件";
+                label1.Text = "安装结束后请点击 清理缓存 进行清理临时文件";
                 label2.Text = "";
                 updateexe.Enabled = false;
                 updateexe.Text = "已更新";
@@ -59,7 +70,7 @@ namespace MenglolitaHost
             //为了防止线程的卡死做了内存回收和url连接数量的的优化
             try
             {
-                System.Net.ServicePointManager.DefaultConnectionLimit = 200;
+                System.Net.ServicePointManager.DefaultConnectionLimit = 210;
                 System.Net.HttpWebRequest Myrq = (System.Net.HttpWebRequest)System.Net.HttpWebRequest.Create(URL);
                 System.Net.HttpWebResponse myrp = (System.Net.HttpWebResponse)Myrq.GetResponse();
                 long totalBytes = myrp.ContentLength;
@@ -86,7 +97,7 @@ namespace MenglolitaHost
                     osize = st.Read(by, 0, (int)by.Length);
 
                     percent = (float)totalDownloadedByte / (float)totalBytes * 100;
-                    label1.Text = "正在下载更新包";
+                    label1.Text = "正在下载更新修复包";
                     label2.Text = percent.ToString() + "%";
                     updateexe.Text = "正在下载";
                     updateexe.Enabled = false;
@@ -94,10 +105,10 @@ namespace MenglolitaHost
                 }
                 so.Close();
                 st.Close();
-                label1.Text = "下载完成，点击 安装更新 进行安装更新包";
+                label1.Text = "下载完成，点击 更新&修复 进行安装操作";
                 label2.Text = "";
                 updateexe.Enabled = true;
-                updateexe.Text = "安装更新";
+                updateexe.Text = "更新&修复";
             }
             catch (System.Exception)
             {
@@ -116,13 +127,13 @@ namespace MenglolitaHost
                 this.Text = "正在清理中...";
                 Directory.Delete(Path2, true);
                 //Directory.CreateDirectory(Path2);
-                MessageBox.Show("更新缓存已清理", "操作完成");
+                MessageBox.Show("更新缓存已清理", "操作完成", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Text = "更新升级";
             }
             else
             {
-                MessageBox.Show("放心吧，更新缓存不存在", "没什么可以清理的");
-                this.Text = "更新升级";
+                MessageBox.Show("放心吧，更新缓存不存在", "没什么可以清理的", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Text = "更新&修复";
             }
         }
     }

@@ -66,9 +66,9 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(227, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 17);
+            this.label5.Size = new System.Drawing.Size(85, 17);
             this.label5.TabIndex = 16;
-            this.label5.Text = "版本 1.6 Final";
+            this.label5.Text = "版本 1.6 OCD";
             // 
             // textBox1
             // 
