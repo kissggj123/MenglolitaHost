@@ -81,9 +81,9 @@
             this.adfqhosts.ForeColor = System.Drawing.Color.DodgerBlue;
             this.adfqhosts.Location = new System.Drawing.Point(12, 67);
             this.adfqhosts.Name = "adfqhosts";
-            this.adfqhosts.Size = new System.Drawing.Size(324, 21);
+            this.adfqhosts.Size = new System.Drawing.Size(275, 21);
             this.adfqhosts.TabIndex = 6;
-            this.adfqhosts.Text = "sy618 hosts ：被墙网站等基础数据（可看YouTube）";
+            this.adfqhosts.Text = "racaljk hosts ：被墙网站等基础数据（推荐）";
             this.adfqhosts.UseVisualStyleBackColor = true;
             this.adfqhosts.CheckedChanged += new System.EventHandler(this.adfqhosts_CheckedChanged);
             // 

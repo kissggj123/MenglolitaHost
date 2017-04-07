@@ -62,12 +62,14 @@ namespace MenglolitaHost
             this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tools = new System.Windows.Forms.ToolStripMenuItem();
-            this.更新hostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.genxinhosts = new System.Windows.Forms.ToolStripMenuItem();
             this.更新dnsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hostedit = new System.Windows.Forms.ToolStripMenuItem();
             this.bughosts = new System.Windows.Forms.ToolStripMenuItem();
             this.youTube专用hostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.偏好设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouthosts = new System.Windows.Forms.ToolStripMenuItem();
             this.mlHostupdate = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripMenuItem();
@@ -301,6 +303,7 @@ namespace MenglolitaHost
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tools,
             this.youTube专用hostsToolStripMenuItem,
+            this.设置ToolStripMenuItem,
             this.abouthosts});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -311,7 +314,7 @@ namespace MenglolitaHost
             // tools
             // 
             this.tools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.更新hostsToolStripMenuItem,
+            this.genxinhosts,
             this.更新dnsToolStripMenuItem,
             this.hostedit,
             this.bughosts});
@@ -319,12 +322,12 @@ namespace MenglolitaHost
             this.tools.Size = new System.Drawing.Size(68, 21);
             this.tools.Text = "快捷操作";
             // 
-            // 更新hostsToolStripMenuItem
+            // genxinhosts
             // 
-            this.更新hostsToolStripMenuItem.Name = "更新hostsToolStripMenuItem";
-            this.更新hostsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.更新hostsToolStripMenuItem.Text = "更新hosts";
-            this.更新hostsToolStripMenuItem.Click += new System.EventHandler(this.更新hostsToolStripMenuItem_Click);
+            this.genxinhosts.Name = "genxinhosts";
+            this.genxinhosts.Size = new System.Drawing.Size(167, 22);
+            this.genxinhosts.Text = "更新hosts";
+            this.genxinhosts.Click += new System.EventHandler(this.更新hostsToolStripMenuItem_Click);
             // 
             // 更新dnsToolStripMenuItem
             // 
@@ -362,6 +365,21 @@ namespace MenglolitaHost
             this.goHostsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.goHostsToolStripMenuItem.Text = "GoHosts";
             this.goHostsToolStripMenuItem.Click += new System.EventHandler(this.goHostsToolStripMenuItem_Click);
+            // 
+            // 设置ToolStripMenuItem
+            // 
+            this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.偏好设置ToolStripMenuItem});
+            this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.设置ToolStripMenuItem.Text = "设置";
+            // 
+            // 偏好设置ToolStripMenuItem
+            // 
+            this.偏好设置ToolStripMenuItem.Name = "偏好设置ToolStripMenuItem";
+            this.偏好设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.偏好设置ToolStripMenuItem.Text = "偏好设置";
+            this.偏好设置ToolStripMenuItem.Click += new System.EventHandler(this.偏好设置ToolStripMenuItem_Click);
             // 
             // abouthosts
             // 
@@ -812,11 +830,11 @@ namespace MenglolitaHost
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(117, 42);
+            this.label3.Location = new System.Drawing.Point(112, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 17);
+            this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 22;
-            this.label3.Text = "版本 1.6 OCD";
+            this.label3.Text = "版本 1.6.2 OCD";
             // 
             // label4
             // 
@@ -862,7 +880,8 @@ namespace MenglolitaHost
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menglolita Host 1.6 OCD Version";
+            this.Text = "Menglolita Host 1.6.2 OCD Version";
+            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelUAC.ResumeLayout(false);
@@ -952,7 +971,9 @@ namespace MenglolitaHost
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button edithosts;
-        private System.Windows.Forms.ToolStripMenuItem 更新hostsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem genxinhosts;
         private System.Windows.Forms.ToolStripMenuItem 更新dnsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 偏好设置ToolStripMenuItem;
     }
 }

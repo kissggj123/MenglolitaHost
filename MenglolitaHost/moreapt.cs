@@ -59,7 +59,7 @@ namespace MenglolitaHost
                 // 目录不存在，建立目录
                 System.IO.Directory.CreateDirectory(Path3);
             }
-            String sourcePath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+            String sourcePath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; 
             String targetPath = Path2 + @"\" + "hosts";
             bool isrewrite = true; //覆盖已存在的同名文件,false则反之
             System.IO.File.Copy(sourcePath, targetPath, isrewrite);

@@ -197,7 +197,7 @@ namespace MenglolitaHost
         {
             //apt地址
             if (adfqhosts.Checked)
-                url.Text = "https://raw.githubusercontent.com/sy618/hosts/master/FQ";
+                url.Text = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts";
                 qd.Enabled = true;
         }
 

@@ -22,7 +22,7 @@ namespace MenglolitaHost
         //private static String _url = "https://hosts-smounives.rhcloud.com/hosts";
         //https://coding.net/u/scaffrey/p/hosts/git/blob/master/hosts
         //https://raw.githubusercontent.com/racaljk/hosts/master/hosts
-        private static String _url = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts";
+        private static String _url = "https://raw.githubusercontent.com/sy618/hosts/master/FQ";
         //https://github.com/racaljk/hosts/blob/master/hosts";
         private static String _path = "C:\\Windows\\System32\\drivers\\etc\\hosts";
         private Thread _thread = null;
@@ -53,7 +53,7 @@ namespace MenglolitaHost
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            btnUpdate.Enabled = false;
+            /*btnUpdate.Enabled = false;
             if (_thread != null)
             {
                 return;
@@ -61,12 +61,16 @@ namespace MenglolitaHost
 
             _thread = new Thread(new ThreadStart(DoUpdate));
             _thread.Start();
-            _timer.Enabled = true;
+            _timer.Enabled = true;*/
+            Form uphosts = new uphosts();
+            uphosts.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string ico =Path + "Confion" + @"\" + "ic_launcher.ico";
+            //this.Icon = new Icon(ico);
             /*if (Directory.Exists(Path + @"\" + "yoursHosts"))
             {
                 testhoost.Enabled = true;
@@ -86,7 +90,44 @@ namespace MenglolitaHost
             {
                 restore.Enabled = true;
             }*/
-
+            if (File.Exists(Path + "Confion" + @"\" + "ic_launcher.ico"))
+            {
+                this.Icon = new Icon(ico);
+            }
+            else
+            {
+                this.ShowIcon = true;
+                this.ShowInTaskbar = true;
+            }
+            if (File.Exists(Path + "Confion" + @"\" + "noshow.mos"))
+            {
+                this.ShowIcon = false;
+                this.ShowInTaskbar = false;
+            }
+            else
+            {
+                this.ShowIcon = true;
+                this.ShowInTaskbar = true;
+            }
+            if (File.Exists(Path + "Confion" + @"\" + "myicon.mos"))
+            {
+                if (File.Exists(Path + "Confion" + @"\" + "ic_launcher.ico"))
+                {
+                    this.Icon = new Icon(ico);
+                }
+                else
+                {
+                    this.TopMost = true;
+                    this.ShowIcon = false;
+                    this.ShowInTaskbar = false;
+                }
+            }
+            else
+            {
+                this.TopMost = false;
+                this.ShowIcon = true;
+                this.ShowInTaskbar = true;
+            }
             if (File.Exists(Path + "moshost.thk"))
             {
                 zhuabao.Enabled = true;
@@ -114,6 +155,8 @@ namespace MenglolitaHost
                     update.Enabled = false;
                     update.Visible = false;
                     this.Text += "--" + "hosts更新工具";
+                    //this.Icon=new Icon(ico);
+   
                 }
 
                 MakeWriteable(_path);
@@ -170,6 +213,7 @@ namespace MenglolitaHost
             try
             {
                 this.btnUpdate.Text = "正在更新...";
+                genxinhosts.Text = "正在更新hosts...";
                 var req = (HttpWebRequest)WebRequest.Create(_url);
                 req.ServicePoint.Expect100Continue = false;
                 req.Method = "GET";
@@ -202,6 +246,7 @@ namespace MenglolitaHost
                         _thread = null;
                         _timer.Enabled = false;
                         this.btnUpdate.Text = "更新已结束";
+                        genxinhosts.Text = "更新hosts完成";
                         MessageBox.Show("更新成功", "已完工", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnUpdate.Enabled = true;
                     }
@@ -610,6 +655,8 @@ namespace MenglolitaHost
         private void 更新hostsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnUpdate.Enabled = false;
+            genxinhosts.Enabled = false;
+            //genxinhosts.Text = "正在更新hosts...";
             if (_thread != null)
             {
                 return;
@@ -633,6 +680,12 @@ namespace MenglolitaHost
             {
                 MessageBox.Show("无法进行修改DNS", "无法启动该功能", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void 偏好设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form setting = new setting();
+            setting.Show();
         }
     }
         }

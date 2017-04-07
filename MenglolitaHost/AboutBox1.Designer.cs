@@ -64,11 +64,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(227, 32);
+            this.label5.Location = new System.Drawing.Point(216, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 17);
+            this.label5.Size = new System.Drawing.Size(95, 17);
             this.label5.TabIndex = 16;
-            this.label5.Text = "版本 1.6 OCD";
+            this.label5.Text = "版本 1.6.2 OCD";
             // 
             // textBox1
             // 
@@ -87,11 +87,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 59);
+            this.label2.Location = new System.Drawing.Point(289, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(209, 132);
+            this.label2.Size = new System.Drawing.Size(179, 36);
             this.label2.TabIndex = 18;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.label2.Text = "一个已经接近停更的版本\r\n\r\nHost on Facebook中国区&&Github";
             // 
             // pictureBox2
             // 

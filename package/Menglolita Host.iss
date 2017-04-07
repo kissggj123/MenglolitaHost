@@ -23,7 +23,7 @@ DefaultDirName={pf}\Menglolita Host
 DisableProgramGroupPage=yes
 DisableWelcomePage=false
 OutputDir=E:\临时文件\MenglolitaHost\package
-OutputBaseFilename=Menglolita hosts更新工具 1.6 final（完结版）
+OutputBaseFilename=Menglolita hosts更新工具 1.6.2 OCD（完结版）
 SetupIconFile=E:\临时文件\MenglolitaHost\MenglolitaHost\ic_launcher.ico
 Compression=lzma
 SolidCompression=yes
@@ -46,7 +46,7 @@ begin
 end;
 
 [Messages]
-BeveledLabel=开发者@北斗家老司机  版本@1.6 final（完结版）
+BeveledLabel=开发者@北斗家老司机  版本@1.6.2 OCD（完结版）
 ClickNext=单击“下一步”继续，或单击“取消”退出安装程序。%n%n%n%n%n%n%n%n感谢这个工具的所有使用者提供&帮助者%n%n如有问题请拍砖自menglolita@menglolita.com%n%nGithub@Kissggj123
 
 [Tasks]

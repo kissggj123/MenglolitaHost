@@ -842,31 +842,33 @@
 2.优化升级逻辑
 3.提升程序稳定性
 
-1.6.0 final版本
+1.6 final版本
 1.一个大版本的更新
 2.尝试修正某些情况下出现请求超时的问题
 3.UI的调整
 4.程序启动速度的优化
 
-1.6.0 OCD版本
+1.6 OCD版本
 1.移除了之前未完成的模块
 2.提升了程序在win7和win10的工作效率
 3.重新修改自动升级的逻辑（github在抽风的情况下建议不要用。。。）
 4.修正文字的错误&amp;小细节调整
-PS：OCD--强迫症</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>感谢所有的hosts开源项目
-https://github.com/racaljk/hosts
-https://github.com/vokins/yhosts
-https://github.com/sy618/hosts
-Google Code project ipv6 hosts
+PS：OCD--强迫症
 
-感谢GFuckW的诞生才有这些项目
+1.6.2 OCD版本
+1.调整默认hosts更新逻辑(可看YouTube)
+2.尝试通过重新编译以修复修改主页的问题
+3.更新dns工具中的一组预置方案
+4.尝试修正部分系统hosts更新失败的问题(感谢@可乐 提供的解决方案 )
+5.开放修改程序logo&amp;隐藏logo功能
+*实验功能
+1.尝试在Intel i5和win10上启用更快的线程模式提升效率（可能会出现问题）
 
-记念Clowwindy 向一个伟大的创造告别
-
-Host on Facebook中国区&amp;&amp;Github</value>
+2.0 Alpha版本
+1.尝试兼容旧版本
+2.移除旧版本的所有功能
+3.加入XX-net，GoProxy的文件（等待解锁）
+</value>
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenglolitaHOST", "MenglolitaHost\MenglolitaHOST.csproj", "{C44DD5B5-5319-4A01-A1FC-0D578047B8CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MH2.0", "2.0\MH2.0\MH2.0.csproj", "{0AC57C6E-BBC4-4E5F-9EF6-8B46DD0E8439}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C44DD5B5-5319-4A01-A1FC-0D578047B8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C44DD5B5-5319-4A01-A1FC-0D578047B8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C44DD5B5-5319-4A01-A1FC-0D578047B8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC57C6E-BBC4-4E5F-9EF6-8B46DD0E8439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC57C6E-BBC4-4E5F-9EF6-8B46DD0E8439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC57C6E-BBC4-4E5F-9EF6-8B46DD0E8439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC57C6E-BBC4-4E5F-9EF6-8B46DD0E8439}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

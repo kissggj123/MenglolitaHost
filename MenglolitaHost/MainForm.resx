@@ -2757,7 +2757,16 @@ DNS操作
 2.提升了程序在win7和win10的工作效率
 3.重新修改自动升级的逻辑（github在抽风的情况下建议不要用。。。）
 4.修正文字的错误&amp;小细节调整
-PS：OCD--强迫症</value>
+PS：OCD--强迫症
+
+1.6.2 OCD版本
+1.调整默认hosts更新逻辑(可看YouTube)
+2.尝试通过重新编译以修复修改主页的问题
+3.更新dns工具中的一组预置方案
+4.尝试修正部分系统hosts更新失败的问题(感谢@可乐 提供的解决方案 )
+5.开放修改程序logo&amp;隐藏logo功能
+*实验功能
+1.尝试在Intel i5和win10上启用更快的线程模式提升效率（可能会出现问题）</value>
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

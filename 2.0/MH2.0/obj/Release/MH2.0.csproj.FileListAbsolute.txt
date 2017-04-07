@@ -1,0 +1,8 @@
+E:\临时文件\MenglolitaHost\2.0\MH2.0\bin\Release\MH2.0.exe.config
+E:\临时文件\MenglolitaHost\2.0\MH2.0\bin\Release\MH2.0.exe
+E:\临时文件\MenglolitaHost\2.0\MH2.0\bin\Release\MH2.0.pdb
+E:\临时文件\MenglolitaHost\2.0\MH2.0\obj\Release\MH2._0.Form1.resources
+E:\临时文件\MenglolitaHost\2.0\MH2.0\obj\Release\MH2._0.Properties.Resources.resources
+E:\临时文件\MenglolitaHost\2.0\MH2.0\obj\Release\MH2.0.csproj.GenerateResource.Cache
+E:\临时文件\MenglolitaHost\2.0\MH2.0\obj\Release\MH2.0.exe
+E:\临时文件\MenglolitaHost\2.0\MH2.0\obj\Release\MH2.0.pdb

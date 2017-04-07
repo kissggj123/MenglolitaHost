@@ -129,7 +129,8 @@ namespace MenglolitaHost
                 //Directory.CreateDirectory(Path2);
                 MessageBox.Show("更新缓存已清理", "操作完成", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Text = "更新升级";
-            }
+                updateexe.Enabled = true;
+              }
             else
             {
                 MessageBox.Show("放心吧，更新缓存不存在", "没什么可以清理的", MessageBoxButtons.OK, MessageBoxIcon.Information);
