@@ -44,9 +44,9 @@
             this.adfqhosts.ForeColor = System.Drawing.Color.DodgerBlue;
             this.adfqhosts.Location = new System.Drawing.Point(12, 51);
             this.adfqhosts.Name = "adfqhosts";
-            this.adfqhosts.Size = new System.Drawing.Size(129, 21);
+            this.adfqhosts.Size = new System.Drawing.Size(242, 21);
             this.adfqhosts.TabIndex = 9;
-            this.adfqhosts.Text = "XX-Net：扫IP迅速";
+            this.adfqhosts.Text = "否：我觉得不是很变态但是我还是想关闭";
             this.adfqhosts.UseVisualStyleBackColor = true;
             // 
             // yhost
@@ -57,9 +57,9 @@
             this.yhost.ForeColor = System.Drawing.Color.DodgerBlue;
             this.yhost.Location = new System.Drawing.Point(12, 24);
             this.yhost.Name = "yhost";
-            this.yhost.Size = new System.Drawing.Size(138, 21);
+            this.yhost.Size = new System.Drawing.Size(146, 21);
             this.yhost.TabIndex = 8;
-            this.yhost.Text = "GoProxy：性能较好";
+            this.yhost.Text = "是：我要关闭变态温蒂";
             this.yhost.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -67,19 +67,19 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 12);
+            this.label1.Size = new System.Drawing.Size(137, 12);
             this.label1.TabIndex = 7;
-            this.label1.Text = "请选择你需要科学上网的方式";
+            this.label1.Text = "温蒂是否又蠢又笨又变态";
             // 
             // qd
             // 
             this.qd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.qd.ForeColor = System.Drawing.Color.Blue;
-            this.qd.Location = new System.Drawing.Point(218, 69);
+            this.qd.Location = new System.Drawing.Point(218, 78);
             this.qd.Name = "qd";
             this.qd.Size = new System.Drawing.Size(86, 32);
             this.qd.TabIndex = 10;
-            this.qd.Text = "配置完成";
+            this.qd.Text = "开始关闭";
             this.qd.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
@@ -99,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(316, 113);
+            this.ClientSize = new System.Drawing.Size(316, 116);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.qd);
             this.Controls.Add(this.adfqhosts);
@@ -113,7 +113,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "配置 Menglolita Host 2.0";
+            this.Text = "配置 关闭温蒂 ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

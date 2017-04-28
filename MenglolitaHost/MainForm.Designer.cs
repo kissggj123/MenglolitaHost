@@ -91,6 +91,8 @@ namespace MenglolitaHost
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.ShareX = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -616,6 +618,8 @@ namespace MenglolitaHost
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label21);
+            this.tabPage5.Controls.Add(this.label20);
             this.tabPage5.Controls.Add(this.label19);
             this.tabPage5.Controls.Add(this.label17);
             this.tabPage5.Controls.Add(this.label18);
@@ -633,6 +637,30 @@ namespace MenglolitaHost
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "致谢名单";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(43, 24);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 17);
+            this.label21.TabIndex = 29;
+            this.label21.Text = "@可乐";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(43, 51);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(56, 17);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "@闪电鼠";
             // 
             // label19
             // 
@@ -834,7 +862,7 @@ namespace MenglolitaHost
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 22;
-            this.label3.Text = "版本 1.6.2 OCD";
+            this.label3.Text = "版本 1.6.4 OCD";
             // 
             // label4
             // 
@@ -880,7 +908,7 @@ namespace MenglolitaHost
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menglolita Host 1.6.2 OCD Version";
+            this.Text = "Menglolita Host 1.6.4 OCD Version";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -975,5 +1003,7 @@ namespace MenglolitaHost
         private System.Windows.Forms.ToolStripMenuItem 更新dnsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 偏好设置ToolStripMenuItem;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
     }
 }

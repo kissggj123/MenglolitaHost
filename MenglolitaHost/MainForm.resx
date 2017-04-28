@@ -2766,7 +2766,21 @@ PS：OCD--强迫症
 4.尝试修正部分系统hosts更新失败的问题(感谢@可乐 提供的解决方案 )
 5.开放修改程序logo&amp;隐藏logo功能
 *实验功能
-1.尝试在Intel i5和win10上启用更快的线程模式提升效率（可能会出现问题）</value>
+1.尝试在Intel i5和win10上启用更快的线程模式提升效率（可能会出现问题）
+
+1.6.3 OCD版本
+1.修正一个系统盘盘符非C盘导致程序出错的问题（感谢@闪电鼠 回报）
+2.更新了更新逻辑&amp;部分文字
+
+1.6.4 OCD版本
+1.修正设置中某些情况下不生效的问题
+2.程序的无用代码优化
+
+2.0 Alpha版本（开发中）
+1.尝试兼容旧版本
+2.移除旧版本的所有功能
+3.加入XX-net，GoProxy的文件（等待解锁）
+</value>
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -19,7 +19,7 @@ namespace MenglolitaHost
         //https://raw.githubusercontent.com/racaljk/hosts/master/hosts
         //private static String _url = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts";
         //https://github.com/racaljk/hosts/blob/master/hosts";
-        private static String _path = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+        private static String _path = Environment.SystemDirectory + "\\drivers\\etc\\hosts";
         private Thread _thread = null;
         private System.Timers.Timer _timer = new System.Timers.Timer(40 * 1000);
         public aptget()
@@ -74,7 +74,7 @@ namespace MenglolitaHost
                 // 目录不存在，建立目录
                 System.IO.Directory.CreateDirectory(Path + @"\" + "Hostbak" + @"\" + "第三方源hosts备份");
             }
-            String sourcePath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+            String sourcePath = Environment.SystemDirectory + "\\drivers\\etc\\hosts"; 
             String targetPath = Path2 + @"\" + "hosts";
             bool isrewrite = true; //覆盖已存在的同名文件,false则反之
             System.IO.File.Copy(sourcePath, targetPath, isrewrite);
@@ -133,7 +133,7 @@ namespace MenglolitaHost
                             // 目录不存在，建立目录
                             System.IO.Directory.CreateDirectory(Path + @"\" + "Hostbak" + @"\" + "第三方源hosts备份");
                         }
-                        String sourcePath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                        String sourcePath = Environment.SystemDirectory + "\\drivers\\etc\\hosts"; ;
                         String targetPath = Path2 + @"\" + "hosts";
                         bool isrewrite = true; //覆盖已存在的同名文件,false则反之
                         System.IO.File.Copy(sourcePath, targetPath, isrewrite);*/

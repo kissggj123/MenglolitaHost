@@ -21,7 +21,7 @@ namespace MenglolitaHost
         //private static String _url = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts";
         private static String _url = "https://raw.githubusercontent.com/sy618/hosts/master/FQ";
         //https://github.com/racaljk/hosts/blob/master/hosts";
-        private static String _path = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+        private static String _path = Environment.SystemDirectory + "\\drivers\\etc\\hosts";
         private Thread _thread = null;
         private System.Timers.Timer _timer = new System.Timers.Timer(40 * 1000);
 
@@ -72,6 +72,7 @@ namespace MenglolitaHost
                         this.progress.Text = "更新已结束";
                         MessageBox.Show("更新成功", "已完工", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         zhenchang.Enabled = true;
+                        safe.Enabled = true;
                     }
                 }
             }
@@ -84,7 +85,7 @@ namespace MenglolitaHost
             {
                 _thread = null;
                 _timer.Enabled = false;
-                this.progress.Text = "更新hosts";
+                this.progress.Text = "点击可再次更新hosts";
             }
         }
 
@@ -114,7 +115,8 @@ namespace MenglolitaHost
         private void yhost_CheckedChanged(object sender, EventArgs e)
         {
             zhenchang.Enabled = false;
-            safe.Enabled = true;
+            safe.Enabled = false;
+            //safe.Enabled = 被禁止;
             if (_thread != null)
             {
                 return;

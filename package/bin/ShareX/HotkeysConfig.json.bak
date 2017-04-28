@@ -223,12 +223,11 @@
           },
           "ScreenRecordFPS": 30,
           "GIFFPS": 10,
-          "GIFEncoding": "FFmpeg",
-          "ScreenRecordFixedDuration": false,
-          "ScreenRecordDuration": 3.0,
+          "ScreenRecordShowCursor": true,
           "ScreenRecordAutoStart": true,
           "ScreenRecordStartDelay": 0.0,
-          "ScreenRecordShowCursor": true,
+          "ScreenRecordFixedDuration": false,
+          "ScreenRecordDuration": 3.0,
           "RunScreencastCLI": false,
           "VideoEncoderSelected": 0,
           "ScrollingCaptureOptions": {
@@ -625,12 +624,11 @@
           },
           "ScreenRecordFPS": 30,
           "GIFFPS": 10,
-          "GIFEncoding": "FFmpeg",
-          "ScreenRecordFixedDuration": false,
-          "ScreenRecordDuration": 3.0,
+          "ScreenRecordShowCursor": true,
           "ScreenRecordAutoStart": true,
           "ScreenRecordStartDelay": 0.0,
-          "ScreenRecordShowCursor": true,
+          "ScreenRecordFixedDuration": false,
+          "ScreenRecordDuration": 3.0,
           "RunScreencastCLI": false,
           "VideoEncoderSelected": 0,
           "ScrollingCaptureOptions": {
@@ -1027,12 +1025,11 @@
           },
           "ScreenRecordFPS": 30,
           "GIFFPS": 10,
-          "GIFEncoding": "FFmpeg",
-          "ScreenRecordFixedDuration": false,
-          "ScreenRecordDuration": 3.0,
+          "ScreenRecordShowCursor": true,
           "ScreenRecordAutoStart": true,
           "ScreenRecordStartDelay": 0.0,
-          "ScreenRecordShowCursor": true,
+          "ScreenRecordFixedDuration": false,
+          "ScreenRecordDuration": 3.0,
           "RunScreencastCLI": false,
           "VideoEncoderSelected": 0,
           "ScrollingCaptureOptions": {
@@ -1429,12 +1426,11 @@
           },
           "ScreenRecordFPS": 30,
           "GIFFPS": 10,
-          "GIFEncoding": "FFmpeg",
-          "ScreenRecordFixedDuration": false,
-          "ScreenRecordDuration": 3.0,
+          "ScreenRecordShowCursor": true,
           "ScreenRecordAutoStart": true,
           "ScreenRecordStartDelay": 0.0,
-          "ScreenRecordShowCursor": true,
+          "ScreenRecordFixedDuration": false,
+          "ScreenRecordDuration": 3.0,
           "RunScreencastCLI": false,
           "VideoEncoderSelected": 0,
           "ScrollingCaptureOptions": {
@@ -1609,5 +1605,5 @@
       }
     }
   ],
-  "ApplicationVersion": "11.6.0"
+  "ApplicationVersion": "11.7.0"
 }

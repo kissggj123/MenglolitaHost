@@ -29,7 +29,7 @@ namespace MenglolitaHost
             }
             else
             {
-                String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                String oldPath = Environment.SystemDirectory + "\\drivers\\etc\\hosts"; ;
                 String bakPath = hostsbakurl.Text;
                 bool isrewrite = true; //覆盖已存在的同名文件,false则反之
                 System.IO.File.Copy(bakPath, oldPath, isrewrite);

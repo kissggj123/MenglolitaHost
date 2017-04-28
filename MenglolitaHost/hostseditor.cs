@@ -19,14 +19,14 @@ namespace MenglolitaHost
 
         private void 打开hostsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String hostspath  = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+            String hostspath = Environment.SystemDirectory + "\\drivers\\etc\\hosts";
             richTextBox1.Text = File.ReadAllText(hostspath, Encoding.Default);
             savehosts.Enabled = true;
         }
 
         private void 写入hostsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String hostspath = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+            String hostspath = Environment.SystemDirectory + "\\drivers\\etc\\hosts";
             richTextBox1.SaveFile(hostspath, RichTextBoxStreamType.PlainText);
             MessageBox.Show("写入完成", "已完成自定义编辑", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

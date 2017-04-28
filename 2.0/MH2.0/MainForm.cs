@@ -24,7 +24,7 @@ namespace MenglolitaHost
         //https://raw.githubusercontent.com/racaljk/hosts/master/hosts
         //private static String _url = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts";
         //https://github.com/racaljk/hosts/blob/master/hosts";
-        private static String _path = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+        private static String _path = Environment.SystemDirectory + "\\drivers\\etc\\hosts";
         private Thread _thread = null;
         private System.Timers.Timer _timer = new System.Timers.Timer(40 * 1000);
 

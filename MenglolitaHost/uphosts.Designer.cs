@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.progress = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // safe
@@ -57,9 +58,9 @@
             this.zhenchang.ForeColor = System.Drawing.Color.DodgerBlue;
             this.zhenchang.Location = new System.Drawing.Point(12, 24);
             this.zhenchang.Name = "zhenchang";
-            this.zhenchang.Size = new System.Drawing.Size(198, 21);
+            this.zhenchang.Size = new System.Drawing.Size(338, 21);
             this.zhenchang.TabIndex = 7;
-            this.zhenchang.Text = "默认模式：hosts可看YouTube";
+            this.zhenchang.Text = "默认模式：hosts可看YouTube（系统盘非C盘可选该项）";
             this.zhenchang.UseVisualStyleBackColor = true;
             this.zhenchang.CheckedChanged += new System.EventHandler(this.yhost_CheckedChanged);
             // 
@@ -79,12 +80,25 @@
             this.progress.BackColor = System.Drawing.Color.Transparent;
             this.progress.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.progress.ForeColor = System.Drawing.Color.Red;
-            this.progress.Location = new System.Drawing.Point(89, 75);
+            this.progress.Location = new System.Drawing.Point(53, 75);
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(121, 20);
             this.progress.TabIndex = 23;
             this.progress.Text = "更新线程准备就绪";
             this.progress.Click += new System.EventHandler(this.progress_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoEllipsis = true;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(8, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "状态：";
             // 
             // uphosts
             // 
@@ -92,7 +106,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(362, 133);
+            this.ClientSize = new System.Drawing.Size(370, 108);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.safe);
@@ -118,5 +133,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label progress;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }

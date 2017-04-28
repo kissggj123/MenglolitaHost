@@ -24,7 +24,7 @@ namespace MenglolitaHost
         //https://raw.githubusercontent.com/racaljk/hosts/master/hosts
         private static String _url = "https://raw.githubusercontent.com/sy618/hosts/master/FQ";
         //https://github.com/racaljk/hosts/blob/master/hosts";
-        private static String _path = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+        private static String _path = Environment.SystemDirectory + "\\drivers\\etc\\hosts";
         private Thread _thread = null;
         private System.Timers.Timer _timer = new System.Timers.Timer(40 * 1000);
 
@@ -53,15 +53,6 @@ namespace MenglolitaHost
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            /*btnUpdate.Enabled = false;
-            if (_thread != null)
-            {
-                return;
-            }
-
-            _thread = new Thread(new ThreadStart(DoUpdate));
-            _thread.Start();
-            _timer.Enabled = true;*/
             Form uphosts = new uphosts();
             uphosts.Show();
         }
@@ -70,63 +61,37 @@ namespace MenglolitaHost
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
             string ico =Path + "Confion" + @"\" + "ic_launcher.ico";
-            //this.Icon = new Icon(ico);
-            /*if (Directory.Exists(Path + @"\" + "yoursHosts"))
-            {
-                testhoost.Enabled = true;
-                hostlk.Enabled = false;
-            }
-            else
-            {
-                testhoost.Enabled = false;
-                hostlk.Enabled = true;
-            }
-
-            if (Directory.Exists(Path + @"\" + "Hostbak"))
-            {
-                restore.Enabled = true;
-            }
-            else
-            {
-                restore.Enabled = true;
-            }*/
             if (File.Exists(Path + "Confion" + @"\" + "ic_launcher.ico"))
             {
-                this.Icon = new Icon(ico);
+                //this.Icon = new Icon(ico);
             }
             else
             {
                 this.ShowIcon = true;
                 this.ShowInTaskbar = true;
             }
+
             if (File.Exists(Path + "Confion" + @"\" + "noshow.mos"))
             {
                 this.ShowIcon = false;
-                this.ShowInTaskbar = false;
+                //this.ShowInTaskbar = false;
             }
             else
             {
                 this.ShowIcon = true;
-                this.ShowInTaskbar = true;
+                //this.ShowInTaskbar = true;
             }
             if (File.Exists(Path + "Confion" + @"\" + "myicon.mos"))
             {
-                if (File.Exists(Path + "Confion" + @"\" + "ic_launcher.ico"))
-                {
+                //
                     this.Icon = new Icon(ico);
-                }
-                else
-                {
-                    this.TopMost = true;
-                    this.ShowIcon = false;
-                    this.ShowInTaskbar = false;
-                }
+                //
             }
             else
             {
-                this.TopMost = false;
+                //this.TopMost = false;
                 this.ShowIcon = true;
-                this.ShowInTaskbar = true;
+                //this.ShowInTaskbar = true;
             }
             if (File.Exists(Path + "moshost.thk"))
             {
@@ -143,15 +108,14 @@ namespace MenglolitaHost
             if (!IsAdministrator())
             {
                 MessageBox.Show("请右键管理员运行", "出错了", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //panelUAC.Dock = DockStyle.Fill;
-                //panelUAC.BringToFront();
-                //panelUAC.Visible = true;
+                //
                 Application.Exit();
             }
             else
             {
                 if (Environment.OSVersion.Version.Major >= 6)
                 {
+                    //System.Diagnostics.Process.Start("http://www.nvyundongxie.com/");  
                     update.Enabled = false;
                     update.Visible = false;
                     this.Text += "--" + "hosts更新工具";
@@ -315,7 +279,8 @@ namespace MenglolitaHost
             }*/
             Process[] thepro = Process.GetProcessesByName("MLSniffer");
             if (thepro.Length > 0)
-            //如果进程曾在或者不止一个 
+            //如果进程在或者不止一个
+            //变态温蒂
             {
                 //逐个结束 
                 for (int i = 0; i < thepro.Length; i++)
@@ -324,7 +289,7 @@ namespace MenglolitaHost
                     if (!thepro[i].CloseMainWindow()) thepro[i].Kill();
                 }
             }
-            //從輸出流取得命令執行結果
+            //从输出流取得执行结果           
             Process[] process = Process.GetProcesses();
             foreach (Process prc in process)
             {
@@ -354,7 +319,7 @@ namespace MenglolitaHost
                 // 目录不存在，建立目录
                 System.IO.Directory.CreateDirectory(Path + @"\" + "Hostbak");
             }
-            String sourcePath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+            String sourcePath = Environment.SystemDirectory + "\\drivers\\etc\\hosts"; ;
             String targetPath = Path2 + @"\" + "hosts";
             bool isrewrite = true; //覆盖已存在的同名文件,false则反之
             System.IO.File.Copy(sourcePath, targetPath, isrewrite);
@@ -392,41 +357,9 @@ namespace MenglolitaHost
             aptget.ShowDialog();
         }
 
-        /*private void testhoost_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog yourshosts = new OpenFileDialog();
-            yourshosts.Filter = "hosts文件(hosts)|*.*";
-            yourshosts.Title = "选择你要替换的hosts文件";
-            yourshosts.FileName = "hosts";
-            String winhosts = "C:\\Windows\\System32\\drivers\\etc\\hosts";
-            if (yourshosts.ShowDialog() == DialogResult.OK)
-            {
-                if (!System.IO.Directory.Exists(@"C:\\Windows\\System32\\drivers\\etc"))
-                {
-                    // 目录不存在，建立目录
-                    System.IO.Directory.CreateDirectory(@"C:\\Windows\\System32\\drivers\\etc");
-                }
-                bool isrewrite = true; //覆盖已存在的同名文件,false则反之
-                //System.IO.Path.Combine(@"C:\\Windows\\System32\\drivers\\etc", System.IO.Path.GetFileName(yourshosts.FileName)
-                System.IO.File.Copy(yourshosts.FileName, winhosts, isrewrite);
-                MessageBox.Show("hosts替换完成", "已替换", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }*/
 
         private void restore_Click(object sender, EventArgs e)
         {
-            /*string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Hostbak";
-            if (!System.IO.Directory.Exists(Path + @"\" + "Hostbak"))
-            {
-                // 目录不存在，建立目录
-                MessageBox.Show("备份的文件被你吃了嘛", "你别骗我");
-            }
-            String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
-            String bakPath = Path2 + @"\" + "hosts";
-            bool isrewrite = true; //覆盖已存在的同名文件,false则反之
-            System.IO.File.Copy(bakPath, oldPath, isrewrite);
-            MessageBox.Show("Hosts恢复完成", "又和以前一样啦");*/
             Form restore = new restore();
             restore.ShowDialog();
         }
@@ -477,11 +410,6 @@ namespace MenglolitaHost
             hostseditor.Show();
         }
 
-        //private void 配置懒人模式ToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-            //Form easymode = new easymode();
-            //easymode.ShowDialog();
-        //}
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -502,21 +430,7 @@ namespace MenglolitaHost
 
         private void update_Click(object sender, EventArgs e)
         {
-            /*timer1.Enabled = true;
-            update.Enabled = false;
-            update.Visible = false;
-            int i = 100;
-            progressBar1.Value = progressBar1.Value + 1;
-            i = 100 - progressBar1.Value;
-            label7.Text = "正在重新检查程序源的hosts信息";//显示百分比
-            label8.Text = progressBar1.Value.ToString() + "%";
-            if (i == 0)
-            {
-                timer1.Enabled = false;
-                label7.Text = "hosts源已准备就绪";//显示百分比
-                label8.Text = "完成";
-                update.Enabled = true;
-                update.Visible = true;*/
+           //
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
@@ -541,7 +455,7 @@ namespace MenglolitaHost
             }
             else
             {
-                String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                String oldPath = Environment.SystemDirectory + "\\drivers\\etc\\hosts"; ;
                 String bakPath = Path2 + @"\" + "hosts";
                 bool isrewrite = true; //覆盖已存在的同名文件,false则反之
                 System.IO.File.Copy(bakPath, oldPath, isrewrite);
@@ -561,7 +475,7 @@ namespace MenglolitaHost
             }
             else
             {
-                String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                String oldPath = Environment.SystemDirectory + "\\drivers\\etc\\hosts"; ;
                 String bakPath = Path2 + @"\" + "hosts";
                 bool isrewrite = true; //覆盖已存在的同名文件,false则反之
                 System.IO.File.Copy(bakPath, oldPath, isrewrite);
@@ -581,7 +495,7 @@ namespace MenglolitaHost
             yourshosts.Filter = "hosts文件(hosts)|*.*";
             yourshosts.Title = "选择你要替换的hosts文件";
             yourshosts.FileName = "hosts";
-            String winhosts = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+            String winhosts = Environment.SystemDirectory + "\\drivers\\etc\\hosts";
             if (yourshosts.ShowDialog() == DialogResult.OK)
             {
                 if (!System.IO.Directory.Exists(@"C:\\Windows\\System32\\drivers\\etc"))
@@ -638,7 +552,7 @@ namespace MenglolitaHost
             }
             else
             {
-                String oldPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"; ;
+                String oldPath = Environment.SystemDirectory + "\\drivers\\etc\\hosts"; ;
                 String bakPath = Path2 + @"\" + "hosts";
                 bool isrewrite = true; //覆盖已存在的同名文件,false则反之
                 System.IO.File.Copy(bakPath, oldPath, isrewrite);
@@ -689,27 +603,7 @@ namespace MenglolitaHost
         }
     }
         }
-    
-    
-
-        /*public static class ControlExtention
-        {
-            public delegate void InvokeHandler();
-
-            public static void SafeInvoke(this Control control, InvokeHandler handler)
-            {
-                if (control.InvokeRequired)
-                {
-                    control.Invoke(handler);
-                }
-                else
-                {
-                    handler();
-                }
-            }
-        }
-    }
-}*/
+//更新于2017-4-28 23:12:36
         
  
     

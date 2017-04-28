@@ -68,7 +68,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 17);
             this.label5.TabIndex = 16;
-            this.label5.Text = "版本 1.6.2 OCD";
+            this.label5.Text = "版本 1.6.4 OCD";
             // 
             // textBox1
             // 

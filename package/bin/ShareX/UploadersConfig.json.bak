@@ -66,6 +66,7 @@
   "GistOAuth2Info": null,
   "GistPublishPublic": false,
   "GistRawURL": false,
+  "GistCustomURL": "",
   "UpasteUserKey": "",
   "UpasteIsPublic": false,
   "HastebinCustomDomain": "https://hastebin.com",
@@ -77,8 +78,8 @@
   "DropboxOAuth2Info": null,
   "DropboxUploadPath": "ShareX/%y/%mo",
   "DropboxAutoCreateShareableLink": true,
+  "DropboxUseDirectLink": false,
   "DropboxURLType": "Default",
-  "DropboxAccountInfo": null,
   "FTPAccountList": [],
   "FTPSelectedImage": 0,
   "FTPSelectedText": 0,
@@ -90,6 +91,9 @@
     "source": null
   },
   "OneDriveAutoCreateShareableLink": true,
+  "GfycatOAuth2Info": null,
+  "GfycatAccountType": "Anonymous",
+  "GfycatIsPublic": false,
   "GoogleDriveOAuth2Info": null,
   "GoogleDriveIsPublic": true,
   "GoogleDriveDirectLink": false,
@@ -146,6 +150,8 @@
     "AccessKeyID": null,
     "SecretAccessKey": null,
     "Endpoint": null,
+    "Region": null,
+    "UsePathStyle": false,
     "Bucket": null,
     "ObjectPrefix": "ShareX/%y/%mo",
     "UseCustomCNAME": false,
@@ -203,6 +209,19 @@
   "AzureStorageAccountName": "",
   "AzureStorageAccountAccessKey": "",
   "AzureStorageContainer": "",
+  "PlikSettings": {
+    "URL": "",
+    "APIKey": "",
+    "IsSecured": false,
+    "Login": "",
+    "Password": "",
+    "Removable": false,
+    "OneShot": false,
+    "TTLUnit": 0,
+    "TTL": 30.0,
+    "HasComment": false,
+    "Comment": ""
+  },
   "BitlyOAuth2Info": null,
   "BitlyDomain": "",
   "GoogleURLShortenerAccountType": "Anonymous",
@@ -227,5 +246,5 @@
   "CustomTextUploaderSelected": 0,
   "CustomFileUploaderSelected": 0,
   "CustomURLShortenerSelected": 0,
-  "ApplicationVersion": "11.6.0"
+  "ApplicationVersion": "11.7.0"
 }
