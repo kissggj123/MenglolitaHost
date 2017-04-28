@@ -59,9 +59,9 @@ namespace MenglolitaHost
             }
             else
             {
-                DownloadFile("https://github.com/kissggj123/MenglolitaHost/raw/master/package/update/update.exe", Path2 + @"\" + "Hosts update.exe", progressBar1, label1);
+                DownloadFile("https://github.com/kissggj123/MenglolitaHost/blob/master/update/update.exe", Path2 + @"\" + "Hosts update.exe", progressBar1, label1);
             }
-            //DownloadFile("https://github.com/kissggj123/MenglolitaHost/raw/master/package/update/update.exe", Path2+@"\"+"Host update.exe", progressBar1, label1);
+            //DownloadFile("update.exe", Path2+@"\"+"Host update.exe", progressBar1, label1);
         }
 
         public void DownloadFile(string URL, string filename, System.Windows.Forms.ProgressBar prog, System.Windows.Forms.Label label1)
