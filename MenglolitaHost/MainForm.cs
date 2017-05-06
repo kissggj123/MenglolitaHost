@@ -61,14 +61,22 @@ namespace MenglolitaHost
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
             string ico =Path + "Confion" + @"\" + "ic_launcher.ico";
-            if (File.Exists(Path + "Confion" + @"\" + "ic_launcher.ico"))
+            if (File.Exists(Path + "Confion" + @"\" + "newuser.use"))
             {
-                //this.Icon = new Icon(ico);
+                step1.Visible = false;
+                stepimg1.Visible = false;
+                stepimg11.Visible = false;
+                steptext1.Visible = false;
+                stepnext1.Visible = false;
+                step2.Visible = false;
+                stepimg2.Visible = false;
+                stepimg22.Visible = false;
+                steptext2.Visible = false;
+                stepnext2.Visible = false;
             }
             else
             {
-                this.ShowIcon = true;
-                this.ShowInTaskbar = true;
+                
             }
 
             if (File.Exists(Path + "Confion" + @"\" + "noshow.mos"))
@@ -90,7 +98,7 @@ namespace MenglolitaHost
             else
             {
                 //this.TopMost = false;
-                this.ShowIcon = true;
+                //this.ShowIcon = true;
                 //this.ShowInTaskbar = true;
             }
             if (File.Exists(Path + "moshost.thk"))
@@ -118,7 +126,23 @@ namespace MenglolitaHost
                     //System.Diagnostics.Process.Start("http://www.nvyundongxie.com/");  
                     update.Enabled = false;
                     update.Visible = false;
-                    this.Text += "--" + "hosts更新工具";
+                    //检查是否存在hosts
+                    if (File.Exists(_path))
+                    {
+                        //不操作
+                        this.Text += "--" + "hosts更新工具";
+                    }
+                    else
+                    {
+                        string filename = _path;
+                        FileStream fs = File.Create(filename);  //创建文件
+                        fs.Close();
+                        StreamWriter sw = new StreamWriter(filename);  //创建写入流
+                        sw.Write("");
+                        sw.Flush();
+                        sw.Close();
+                        System.IO.File.SetAttributes(_path, System.IO.FileAttributes.Normal);
+                    }
                     //this.Icon=new Icon(ico);
    
                 }
@@ -570,6 +594,7 @@ namespace MenglolitaHost
         {
             btnUpdate.Enabled = false;
             genxinhosts.Enabled = false;
+            System.IO.File.SetAttributes(_path, System.IO.FileAttributes.Normal);
             //genxinhosts.Text = "正在更新hosts...";
             if (_thread != null)
             {
@@ -600,6 +625,54 @@ namespace MenglolitaHost
         {
             Form setting = new setting();
             setting.Show();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            step1.Visible = false;
+            stepimg1.Visible = false;
+            stepimg11.Visible = false;
+            steptext1.Visible = false;
+            stepnext1.Visible = false;
+            this.tabPage2.Show();
+            tabControl1.Enabled = true;
+            tabControl1.SelectedIndex = 1;
+        }
+
+        private void stepnext2_Click(object sender, EventArgs e)
+        {
+            step2.Visible = false;
+            stepimg2.Visible = false;
+            stepimg22.Visible = false;
+            steptext2.Visible = false;
+            stepnext2.Visible = false;
+            //完成教程
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string filename = Path + "Confion" + @"\" + "newuser.use";
+            FileStream fs = File.Create(filename);  //创建文件
+            fs.Close();
+            StreamWriter sw = new StreamWriter(filename);  //创建写入流
+            sw.Write("感谢使用Menglolita Host更新工具" + "{" + "已完成教程" + "}");
+            sw.Flush();
+            sw.Close();
+            //显示更新窗体
+            Form uphosts = new uphosts();
+            uphosts.Show();
         }
     }
         }

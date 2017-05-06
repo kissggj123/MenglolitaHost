@@ -47,9 +47,6 @@ namespace MenglolitaHost
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.panelUAC = new System.Windows.Forms.Panel();
-            this.lbUAC = new System.Windows.Forms.Label();
-            this.btnStartWithAdmin = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -80,7 +77,17 @@ namespace MenglolitaHost
             this.update = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.step1 = new System.Windows.Forms.Panel();
+            this.stepimg11 = new System.Windows.Forms.PictureBox();
+            this.stepnext1 = new System.Windows.Forms.Button();
+            this.steptext1 = new System.Windows.Forms.Label();
+            this.stepimg1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.step2 = new System.Windows.Forms.Panel();
+            this.stepimg22 = new System.Windows.Forms.PictureBox();
+            this.stepnext2 = new System.Windows.Forms.Button();
+            this.stepimg2 = new System.Windows.Forms.PictureBox();
+            this.steptext2 = new System.Windows.Forms.Label();
             this.edithosts = new System.Windows.Forms.Button();
             this.fixhosts = new System.Windows.Forms.Button();
             this.testhoost = new System.Windows.Forms.Button();
@@ -88,6 +95,10 @@ namespace MenglolitaHost
             this.label16 = new System.Windows.Forms.Label();
             this.DNS = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.ShareX = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -112,13 +123,20 @@ namespace MenglolitaHost
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelUAC.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.step1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepimg11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepimg1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.step2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepimg22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepimg2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -126,46 +144,6 @@ namespace MenglolitaHost
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelUAC
-            // 
-            this.panelUAC.Controls.Add(this.lbUAC);
-            this.panelUAC.Controls.Add(this.btnStartWithAdmin);
-            this.panelUAC.Location = new System.Drawing.Point(600, 133);
-            this.panelUAC.Name = "panelUAC";
-            this.panelUAC.Size = new System.Drawing.Size(346, 254);
-            this.panelUAC.TabIndex = 6;
-            this.panelUAC.Visible = false;
-            // 
-            // lbUAC
-            // 
-            this.lbUAC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbUAC.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUAC.Location = new System.Drawing.Point(83, 35);
-            this.lbUAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbUAC.Name = "lbUAC";
-            this.lbUAC.Size = new System.Drawing.Size(199, 30);
-            this.lbUAC.TabIndex = 2;
-            this.lbUAC.Text = "需要管理员权限运行";
-            this.lbUAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnStartWithAdmin
-            // 
-            this.btnStartWithAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStartWithAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartWithAdmin.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnStartWithAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnStartWithAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnStartWithAdmin.Image")));
-            this.btnStartWithAdmin.Location = new System.Drawing.Point(84, 166);
-            this.btnStartWithAdmin.Name = "btnStartWithAdmin";
-            this.btnStartWithAdmin.Size = new System.Drawing.Size(168, 33);
-            this.btnStartWithAdmin.TabIndex = 0;
-            this.btnStartWithAdmin.Text = "请右键管理员";
-            this.btnStartWithAdmin.UseVisualStyleBackColor = true;
-            this.btnStartWithAdmin.Click += new System.EventHandler(this.btnStartWithAdmin_Click);
             // 
             // btnUpdate
             // 
@@ -461,6 +439,8 @@ namespace MenglolitaHost
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage7);
@@ -473,6 +453,7 @@ namespace MenglolitaHost
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.step1);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -482,8 +463,59 @@ namespace MenglolitaHost
             this.tabPage1.Text = "开始使用";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // step1
+            // 
+            this.step1.Controls.Add(this.stepimg11);
+            this.step1.Controls.Add(this.stepnext1);
+            this.step1.Controls.Add(this.steptext1);
+            this.step1.Controls.Add(this.stepimg1);
+            this.step1.Location = new System.Drawing.Point(58, 1);
+            this.step1.Name = "step1";
+            this.step1.Size = new System.Drawing.Size(337, 137);
+            this.step1.TabIndex = 13;
+            // 
+            // stepimg11
+            // 
+            this.stepimg11.Image = global::MenglolitaHost.Properties.Resources.Deathstroke_96px;
+            this.stepimg11.Location = new System.Drawing.Point(116, 33);
+            this.stepimg11.Name = "stepimg11";
+            this.stepimg11.Size = new System.Drawing.Size(100, 91);
+            this.stepimg11.TabIndex = 14;
+            this.stepimg11.TabStop = false;
+            // 
+            // stepnext1
+            // 
+            this.stepnext1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.stepnext1.Location = new System.Drawing.Point(235, 84);
+            this.stepnext1.Name = "stepnext1";
+            this.stepnext1.Size = new System.Drawing.Size(87, 43);
+            this.stepnext1.TabIndex = 13;
+            this.stepnext1.Text = "我知道了";
+            this.stepnext1.UseVisualStyleBackColor = true;
+            this.stepnext1.Click += new System.EventHandler(this.button1_Click_3);
+            // 
+            // steptext1
+            // 
+            this.steptext1.AutoSize = true;
+            this.steptext1.Font = new System.Drawing.Font("Year supply of fairy cakes", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.steptext1.Location = new System.Drawing.Point(111, 2);
+            this.steptext1.Name = "steptext1";
+            this.steptext1.Size = new System.Drawing.Size(225, 27);
+            this.steptext1.TabIndex = 12;
+            this.steptext1.Text = "切换至 hosts操作 选项卡";
+            // 
+            // stepimg1
+            // 
+            this.stepimg1.Image = global::MenglolitaHost.Properties.Resources.up_arrow_92;
+            this.stepimg1.Location = new System.Drawing.Point(0, 0);
+            this.stepimg1.Name = "stepimg1";
+            this.stepimg1.Size = new System.Drawing.Size(105, 95);
+            this.stepimg1.TabIndex = 11;
+            this.stepimg1.TabStop = false;
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.step2);
             this.tabPage2.Controls.Add(this.edithosts);
             this.tabPage2.Controls.Add(this.fixhosts);
             this.tabPage2.Controls.Add(this.testhoost);
@@ -498,6 +530,57 @@ namespace MenglolitaHost
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "hosts操作";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // step2
+            // 
+            this.step2.Controls.Add(this.stepimg22);
+            this.step2.Controls.Add(this.stepnext2);
+            this.step2.Controls.Add(this.stepimg2);
+            this.step2.Controls.Add(this.steptext2);
+            this.step2.Location = new System.Drawing.Point(78, 51);
+            this.step2.Name = "step2";
+            this.step2.Size = new System.Drawing.Size(411, 137);
+            this.step2.TabIndex = 14;
+            // 
+            // stepimg22
+            // 
+            this.stepimg22.Image = global::MenglolitaHost.Properties.Resources.Deathstroke_96px;
+            this.stepimg22.Location = new System.Drawing.Point(153, 31);
+            this.stepimg22.Name = "stepimg22";
+            this.stepimg22.Size = new System.Drawing.Size(100, 86);
+            this.stepimg22.TabIndex = 16;
+            this.stepimg22.TabStop = false;
+            // 
+            // stepnext2
+            // 
+            this.stepnext2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.stepnext2.Location = new System.Drawing.Point(296, 64);
+            this.stepnext2.Name = "stepnext2";
+            this.stepnext2.Size = new System.Drawing.Size(94, 43);
+            this.stepnext2.TabIndex = 15;
+            this.stepnext2.Text = "我知道了";
+            this.stepnext2.UseVisualStyleBackColor = true;
+            this.stepnext2.Click += new System.EventHandler(this.stepnext2_Click);
+            // 
+            // stepimg2
+            // 
+            this.stepimg2.Image = global::MenglolitaHost.Properties.Resources.arrow_up_96px_1132573;
+            this.stepimg2.Location = new System.Drawing.Point(3, 3);
+            this.stepimg2.Name = "stepimg2";
+            this.stepimg2.Size = new System.Drawing.Size(105, 104);
+            this.stepimg2.TabIndex = 11;
+            this.stepimg2.TabStop = false;
+            this.stepimg2.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // steptext2
+            // 
+            this.steptext2.AutoSize = true;
+            this.steptext2.Font = new System.Drawing.Font("Year supply of fairy cakes", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.steptext2.Location = new System.Drawing.Point(114, 4);
+            this.steptext2.Name = "steptext2";
+            this.steptext2.Size = new System.Drawing.Size(293, 27);
+            this.steptext2.TabIndex = 12;
+            this.steptext2.Text = "点击 更新hosts 即可开始更新操作";
             // 
             // edithosts
             // 
@@ -589,6 +672,50 @@ namespace MenglolitaHost
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "备份&恢复";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.label22);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(580, 174);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "XX-Net";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(262, 67);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(56, 20);
+            this.label22.TabIndex = 25;
+            this.label22.Text = "2.0开放";
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.label23);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(580, 174);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Goproxy";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(262, 67);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(56, 20);
+            this.label23.TabIndex = 24;
+            this.label23.Text = "2.0开放";
             // 
             // tabPage8
             // 
@@ -816,6 +943,7 @@ namespace MenglolitaHost
             this.textBox2.Size = new System.Drawing.Size(580, 178);
             this.textBox2.TabIndex = 18;
             this.textBox2.Text = resources.GetString("textBox2.Text");
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // tabPage6
             // 
@@ -862,7 +990,7 @@ namespace MenglolitaHost
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 22;
-            this.label3.Text = "版本 1.6.4 OCD";
+            this.label3.Text = "版本 1.6.6 OCD";
             // 
             // label4
             // 
@@ -898,7 +1026,6 @@ namespace MenglolitaHost
             this.Controls.Add(this.label7);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panelUAC);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -908,20 +1035,31 @@ namespace MenglolitaHost
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menglolita Host 1.6.4 OCD Version";
+            this.Text = "Menglolita Host 1.6.7 OCD Version";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panelUAC.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.step1.ResumeLayout(false);
+            this.step1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepimg11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepimg1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.step2.ResumeLayout(false);
+            this.step2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepimg22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepimg2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             this.tabPage5.ResumeLayout(false);
@@ -939,9 +1077,6 @@ namespace MenglolitaHost
 
         #endregion
 
-        private System.Windows.Forms.Panel panelUAC;
-        private System.Windows.Forms.Label lbUAC;
-        private System.Windows.Forms.Button btnStartWithAdmin;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
@@ -1004,5 +1139,19 @@ namespace MenglolitaHost
         private System.Windows.Forms.ToolStripMenuItem 偏好设置ToolStripMenuItem;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.PictureBox stepimg1;
+        private System.Windows.Forms.Panel step1;
+        private System.Windows.Forms.Label steptext1;
+        private System.Windows.Forms.Panel step2;
+        private System.Windows.Forms.PictureBox stepimg2;
+        private System.Windows.Forms.Label steptext2;
+        private System.Windows.Forms.Button stepnext1;
+        private System.Windows.Forms.PictureBox stepimg11;
+        private System.Windows.Forms.PictureBox stepimg22;
+        private System.Windows.Forms.Button stepnext2;
     }
 }

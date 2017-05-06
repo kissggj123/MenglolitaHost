@@ -53,6 +53,7 @@ namespace MenglolitaHost
                     using (var reader = new StreamReader(stream, encoding))
                     {
                         var content = reader.ReadToEnd();
+                        System.IO.File.SetAttributes(_path, System.IO.FileAttributes.Normal);
                         File.WriteAllText(_path, content, Encoding.UTF8);
                         //更新DNS缓存
                         string str = "ipconfig /flushdns";
@@ -116,6 +117,16 @@ namespace MenglolitaHost
         {
             zhenchang.Enabled = false;
             safe.Enabled = false;
+            this.Height = 357;
+            this.Width = 386;
+            notetext1.Visible = true;
+            notetext2.Visible = true;
+            notice1.Visible = true;
+            tw.Visible = true;
+            fb.Visible = true;
+            yb.Visible = true;
+            gg.Visible = true;
+            System.IO.File.SetAttributes(_path, System.IO.FileAttributes.Normal);
             //safe.Enabled = 被禁止;
             if (_thread != null)
             {
@@ -135,7 +146,17 @@ namespace MenglolitaHost
         private void safe_CheckedChanged(object sender, EventArgs e)
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
+            System.IO.File.SetAttributes(_path, System.IO.FileAttributes.Normal);
             safe.Enabled = false;
+            notetext1.Visible = true;
+            notetext2.Visible = true;
+            notice1.Visible = true;
+            tw.Visible = true;
+            fb.Visible = true;
+            yb.Visible = true;
+            gg.Visible = true;
+            this.Height = 357;
+            this.Width = 386;
             Process proc = new Process();
             proc.StartInfo.FileName = Path + "bin" + @"\" + "sfmd.exe";
             proc.Start();
@@ -145,6 +166,16 @@ namespace MenglolitaHost
         private void uphosts_Load(object sender, EventArgs e)
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
+            notetext1.Visible = false;
+            notetext2.Visible = false;
+            notice1.Visible = false;
+            tw.Visible = false;
+            fb.Visible = false;
+            yb.Visible = false;
+            gg.Visible = false;
+            //设置大小
+            this.Height = 147;
+            this.Width = 386;
             if (File.Exists(Path + "bin" + @"\" + "sfmd.exe"))
             {
                 safe.Enabled = true;
@@ -158,6 +189,11 @@ namespace MenglolitaHost
                 MessageBox.Show("安全模式无法启动", "安全模式被禁止使用", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 safe.Enabled = false;
             }
+        }
+
+        private void steptext1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

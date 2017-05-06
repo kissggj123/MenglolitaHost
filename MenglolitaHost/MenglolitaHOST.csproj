@@ -166,7 +166,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="twitter.png" />
+    <None Include="youtube.png" />
+    <None Include="arrow_up_96px_1132573.png" />
     <Content Include="Confion\ic_launcher.ico" />
+    <None Include="up_arrow_92.png" />
+    <None Include="diagonal_arrow_128px.png" />
+    <None Include="diagonal_arrow_96px.png" />
+    <None Include="Deathstroke_96px.png" />
+    <None Include="google.png" />
+    <None Include="facebook.png" />
     <Content Include="ic_launcher.ico" />
   </ItemGroup>
   <ItemGroup>
