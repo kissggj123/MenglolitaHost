@@ -59,7 +59,7 @@ namespace MenglolitaHost
             }
             else
             {
-                DownloadFile("https://github.com/kissggj123/MenglolitaHost/blob/master/update/update.exe", Path2 + @"\" + "Hosts update.exe", progressBar1, label1);
+                DownloadFile("https://raw.githubusercontent.com/kissggj123/MenglolitaHost/master/update/update.exe", Path2 + @"\" + "Hosts update.exe", progressBar1, label1);
             }
             //DownloadFile("update.exe", Path2+@"\"+"Host update.exe", progressBar1, label1);
         }
