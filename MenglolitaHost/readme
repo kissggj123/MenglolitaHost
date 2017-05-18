@@ -1,3 +1,4 @@
+
 1.hosts更新功能实现原理
 通过HttpWebRespon字节流模块获来自于sy618的科学上网hosts文件并下载到本地并且通过File.WriteAllText函数写到本地hosts文件中
 Environment.SystemDirectory：获取system32文件夹的位置（同时可防止因为系统盘为非C盘而报错的问题）
@@ -15,3 +16,6 @@ Environment.SystemDirectory：获取system32文件夹的位置（同时可防止
 （5）hosts不能用：打开本软件更新一次即可
 （6）报毒怎么办：别担心，这个程序是个大病毒，会让你电脑爆炸的那种
 （7）我的手机可以运行吗：我家电饭煲完美运行
+
+4.后记
+刚开始写这程序只是为了方便需要用hosts上谷歌的小伙伴，后来因为更多人的需求故加入了更多功能
