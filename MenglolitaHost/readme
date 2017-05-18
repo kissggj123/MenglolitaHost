@@ -1,0 +1,6 @@
+1.hosts更新功能实现原理
+通过HttpWebRespon字节流模块获来自于sy618的科学上网hosts文件并下载到本地并且通过File.WriteAllText函数写到本地hosts文件中
+Environment.SystemDirectory：获取system32文件夹的位置（同时可防止因为系统盘为非C盘而报错的问题）
+
+2.DNS更新功能实现原理
+
