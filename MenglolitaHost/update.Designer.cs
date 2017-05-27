@@ -32,10 +32,10 @@
             this.version = new System.Windows.Forms.Label();
             this.version2 = new System.Windows.Forms.Label();
             this.updateexe = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.clean = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // version
@@ -75,13 +75,6 @@
             this.updateexe.UseVisualStyleBackColor = false;
             this.updateexe.Click += new System.EventHandler(this.updateexe_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 88);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(421, 23);
-            this.progressBar1.TabIndex = 20;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -95,7 +88,7 @@
             // 
             this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(380, 73);
+            this.label2.Location = new System.Drawing.Point(380, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 22;
@@ -114,17 +107,24 @@
             this.clean.UseVisualStyleBackColor = false;
             this.clean.Click += new System.EventHandler(this.button1_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(13, 90);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(420, 23);
+            this.progressBar1.TabIndex = 24;
+            // 
             // update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(448, 118);
+            this.ClientSize = new System.Drawing.Size(448, 125);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.clean);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.updateexe);
             this.Controls.Add(this.version2);
             this.Controls.Add(this.version);
@@ -136,6 +136,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "更新&修复";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.update_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -147,9 +148,9 @@
         private System.Windows.Forms.Label version;
         private System.Windows.Forms.Label version2;
         private System.Windows.Forms.Button updateexe;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button clean;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

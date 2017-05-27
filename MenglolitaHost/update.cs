@@ -23,7 +23,9 @@ namespace MenglolitaHost
             string Path2 = AppDomain.CurrentDomain.BaseDirectory + "update";
             if (File.Exists(Path2 + @"\" + "Hosts update.exe"))
             {
-                updateexe.Enabled = false;
+                updateexe.Enabled = true;
+                updateexe.Text = "开始安装";
+                label1.Text = "已下载完成，点击 开始安装 进行安装操作";
                 clean.Enabled = true;
             }
             else
@@ -32,8 +34,8 @@ namespace MenglolitaHost
                 clean.Enabled = false;
             }
             FileVersionInfo myFileVersion = FileVersionInfo.GetVersionInfo(System.Windows.Forms.Application.ExecutablePath);
-            version2.Text = "当前程序版本："+myFileVersion.FileVersion; 
-            version.Text = "当前组件版本："+System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            version2.Text = "当前程序版本：" + myFileVersion.FileVersion;
+            version.Text = "当前组件版本：" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             label2.Text = "";
         }
 
@@ -59,7 +61,7 @@ namespace MenglolitaHost
             }
             else
             {
-                DownloadFile("https://github.com/kissggj123/MenglolitaHost/blob/master/update/update.exe", Path2 + @"\" + "Hosts update.exe", progressBar1, label1);
+                DownloadFile("https://raw.githubusercontent.com/kissggj123/MenglolitaHost/master/update/update.exe", Path2 + @"\" + "Hosts update.exe", progressBar1, label1);
             }
             //DownloadFile("update.exe", Path2+@"\"+"Host update.exe", progressBar1, label1);
         }
@@ -105,10 +107,10 @@ namespace MenglolitaHost
                 }
                 so.Close();
                 st.Close();
-                label1.Text = "下载完成，点击 更新&修复 进行安装操作";
+                label1.Text = "下载完成，点击 开始安装 进行安装操作";
                 label2.Text = "";
                 updateexe.Enabled = true;
-                updateexe.Text = "更新&修复";
+                updateexe.Text = "开始安装";
             }
             catch (System.Exception)
             {
@@ -127,10 +129,14 @@ namespace MenglolitaHost
                 this.Text = "正在清理中...";
                 Directory.Delete(Path2, true);
                 //Directory.CreateDirectory(Path2);
+                label1.Text = "准备就绪";
+                updateexe.Text = "更新&修复";
                 MessageBox.Show("更新缓存已清理", "操作完成", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Text = "更新升级";
+                this.Text = "更新&修复";
+                //
+                clean.Enabled = false;
                 updateexe.Enabled = true;
-              }
+            }
             else
             {
                 MessageBox.Show("放心吧，更新缓存不存在", "没什么可以清理的", MessageBoxButtons.OK, MessageBoxIcon.Information);

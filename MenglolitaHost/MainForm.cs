@@ -206,7 +206,7 @@ namespace MenglolitaHost
                 req.ServicePoint.Expect100Continue = false;
                 req.Method = "GET";
                 req.KeepAlive = true;
-                req.UserAgent = "Menglolita Host 1.5.8";
+                req.UserAgent = "Menglolita Host 1.6.7";
                 req.Timeout = 30 * 1000;
 
                 // 以字符流的方式读取HTTP响应
@@ -219,18 +219,7 @@ namespace MenglolitaHost
                         var content = reader.ReadToEnd();
                         File.WriteAllText(_path, content, Encoding.UTF8);
                         //更新DNS缓存
-                        string str = "ipconfig /flushdns";
-                        System.Diagnostics.Process p = new System.Diagnostics.Process(); p.StartInfo.FileName = "cmd.exe";
-                        p.StartInfo.UseShellExecute = false; //是否使用操作系统shell启动
-                        p.StartInfo.RedirectStandardInput = true;//接受来自调用程序的输入信息
-                        p.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息
-                        p.StartInfo.RedirectStandardError = true;//重定向标准错误输出 
-                        p.StartInfo.CreateNoWindow = true;//不显示程序窗口
-                        p.Start();//启动程序
-                        //向cmd窗口发送输入信息
-                        p.StandardInput.WriteLine(str + "&exit");
-                        p.StandardInput.AutoFlush = true;
-                        //p.StandardInput.WriteLine("exit");
+                        NativeMethods.DnsFlushResolverCache();
                         _thread = null;
                         _timer.Enabled = false;
                         this.btnUpdate.Text = "更新已结束";
@@ -243,7 +232,7 @@ namespace MenglolitaHost
             catch (ThreadAbortException) { }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "TM出错了", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "更新出错了", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -257,7 +246,7 @@ namespace MenglolitaHost
         {
             if (_thread != null && _thread.IsAlive)
             {
-                if (MessageBox.Show("TM！看起来超时了！是否终止！", "你不要搞事情", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("看起来超时了！是否终止！", "你不要搞事情", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     try
                     {
@@ -347,7 +336,7 @@ namespace MenglolitaHost
             String targetPath = Path2 + @"\" + "hosts";
             bool isrewrite = true; //覆盖已存在的同名文件,false则反之
             System.IO.File.Copy(sourcePath, targetPath, isrewrite);
-            MessageBox.Show("Host备份完成\r\n备份所在位置：" + Path2 + "\r\nHosts默认位置：C:\\Windows\\System32\\drivers\\etc", "你尽情的搞事情吧", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Hosts备份完成\r\n备份所在位置：" + Path2 + "\r\nHosts默认位置：C:\\Windows\\System32\\drivers\\etc", "你尽情的搞事情吧", MessageBoxButtons.OK, MessageBoxIcon.Information);
             restore.Enabled = true;
         }
 
@@ -356,7 +345,7 @@ namespace MenglolitaHost
             string Path = AppDomain.CurrentDomain.BaseDirectory;
             if (File.Exists(Path + "moshost.thk"))
             {
-                this.Text = "（" + "当前为开发者模式" + ")"; ;
+                //this.Text = "（" + "当前为开发者模式" + ")"; 
             }
             else
             {
@@ -365,6 +354,7 @@ namespace MenglolitaHost
             //启动抓包工具
             if (File.Exists(Path + "bin" + @"\" + "MLSniffer.exe"))
             {
+                this.Text = "（" + "当前为开发者模式" + ")"; 
                 Process proc = new Process();
                 proc.StartInfo.FileName = Path + "bin" + @"\" + "MLSniffer.exe";
                 proc.Start();
@@ -418,7 +408,7 @@ namespace MenglolitaHost
 
         private void label5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("这TM绝对是最后一个版本\r\n不是我就是*(bi)*(bi)\r\n还有...", "说不定我马上就反悔了", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("这绝对是最后一个版本\r\n不是我就是*(bi)*(bi)\r\n还有...", "说不定我马上就反悔了", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void menglolitaHostToolStripMenuItem_Click(object sender, EventArgs e)
@@ -471,20 +461,10 @@ namespace MenglolitaHost
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
             string Path2 = AppDomain.CurrentDomain.BaseDirectory + "Confion";
-            if (!System.IO.Directory.Exists(Path + @"\" + "Confion"))
-            {
-                // 目录不存在，建立目录
-                MessageBox.Show("备份的文件被你吃了嘛", "你别骗我");
-                //return;
-            }
-            else
-            {
-                String oldPath = Environment.SystemDirectory + "\\drivers\\etc\\hosts"; ;
-                String bakPath = Path2 + @"\" + "hosts";
-                bool isrewrite = true; //覆盖已存在的同名文件,false则反之
-                System.IO.File.Copy(bakPath, oldPath, isrewrite);
-                MessageBox.Show("Hosts恢复完成", "年轻人继续搞事情", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Form gohosts = new gohosts();
+            gohosts.ShowDialog();
+
+           
         }
 
         private void bughosts_Click(object sender, EventArgs e)
@@ -674,9 +654,15 @@ namespace MenglolitaHost
             Form uphosts = new uphosts();
             uphosts.Show();
         }
+
+        private void 更新修复ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form update = new update();
+            update.Show();
+        }
     }
         }
-//更新于2017-4-28 23:12:36
+//更新于2017-5-14 21:46:17
         
  
     

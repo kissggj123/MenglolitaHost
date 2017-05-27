@@ -248,7 +248,7 @@ namespace MenglolitaHost
 
         private void label5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("这TM绝对是最后一个版本\r\n不是我就是*(bi)*(bi)\r\n还有...", "说不定我马上就反悔了", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("这绝对是最后一个版本\r\n不是我就是*(bi)*(bi)\r\n还有...", "说不定我马上就反悔了", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void menglolitaHostToolStripMenuItem_Click(object sender, EventArgs e)

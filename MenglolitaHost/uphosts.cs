@@ -42,7 +42,7 @@ namespace MenglolitaHost
                 req.ServicePoint.Expect100Continue = false;
                 req.Method = "GET";
                 req.KeepAlive = true;
-                req.UserAgent = "Menglolita Host 1.5.8";
+                req.UserAgent = "Menglolita Host 1.6.8";
                 req.Timeout = 30 * 1000;
 
                 // 以字符流的方式读取HTTP响应
@@ -56,18 +56,7 @@ namespace MenglolitaHost
                         System.IO.File.SetAttributes(_path, System.IO.FileAttributes.Normal);
                         File.WriteAllText(_path, content, Encoding.UTF8);
                         //更新DNS缓存
-                        string str = "ipconfig /flushdns";
-                        System.Diagnostics.Process p = new System.Diagnostics.Process(); p.StartInfo.FileName = "cmd.exe";
-                        p.StartInfo.UseShellExecute = false; //是否使用操作系统shell启动
-                        p.StartInfo.RedirectStandardInput = true;//接受来自调用程序的输入信息
-                        p.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息
-                        p.StartInfo.RedirectStandardError = true;//重定向标准错误输出 
-                        p.StartInfo.CreateNoWindow = true;//不显示程序窗口
-                        p.Start();//启动程序
-                        //向cmd窗口发送输入信息
-                        p.StandardInput.WriteLine(str + "&exit");
-                        p.StandardInput.AutoFlush = true;
-                        //p.StandardInput.WriteLine("exit");
+                        NativeMethods.DnsFlushResolverCache();
                         _thread = null;
                         _timer.Enabled = false;
                         this.progress.Text = "更新已结束";
@@ -94,7 +83,7 @@ namespace MenglolitaHost
         {
             if (_thread != null && _thread.IsAlive)
             {
-                if (MessageBox.Show("TM！看起来超时了！是否终止！", "你不要搞事情", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("看起来超时了！是否终止！", "你不要搞事情", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     try
                     {

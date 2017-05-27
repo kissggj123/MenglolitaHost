@@ -68,6 +68,13 @@
     <Compile Include="easymode.Designer.cs">
       <DependentUpon>easymode.cs</DependentUpon>
     </Compile>
+    <Compile Include="gohosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gohosts.Designer.cs">
+      <DependentUpon>gohosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NativeMethods.cs" />
     <Compile Include="setting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,15 +121,20 @@
     </Compile>
     <EmbeddedResource Include="2.0.resx">
       <DependentUpon>2.0.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="aptget.resx">
       <DependentUpon>aptget.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="easymode.resx">
       <DependentUpon>easymode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gohosts.resx">
+      <DependentUpon>gohosts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hostseditor.resx">
       <DependentUpon>hostseditor.cs</DependentUpon>

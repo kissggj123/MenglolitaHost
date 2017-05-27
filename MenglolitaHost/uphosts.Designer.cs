@@ -38,11 +38,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.notetext1 = new System.Windows.Forms.Label();
             this.notice1 = new System.Windows.Forms.Panel();
+            this.notetext2 = new System.Windows.Forms.Label();
             this.tw = new System.Windows.Forms.PictureBox();
             this.fb = new System.Windows.Forms.PictureBox();
             this.yb = new System.Windows.Forms.PictureBox();
             this.gg = new System.Windows.Forms.PictureBox();
-            this.notetext2 = new System.Windows.Forms.Label();
             this.notice1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fb)).BeginInit();
@@ -94,9 +94,9 @@
             this.progress.ForeColor = System.Drawing.Color.Red;
             this.progress.Location = new System.Drawing.Point(53, 75);
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(121, 20);
+            this.progress.Size = new System.Drawing.Size(219, 20);
             this.progress.TabIndex = 23;
-            this.progress.Text = "更新线程准备就绪";
+            this.progress.Text = "更新线程准备就绪，点击即可更新";
             this.progress.Click += new System.EventHandler(this.progress_Click);
             // 
             // label2
@@ -138,6 +138,17 @@
             this.notice1.Size = new System.Drawing.Size(345, 208);
             this.notice1.TabIndex = 26;
             // 
+            // notetext2
+            // 
+            this.notetext2.AutoSize = true;
+            this.notetext2.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notetext2.ForeColor = System.Drawing.Color.Red;
+            this.notetext2.Location = new System.Drawing.Point(3, 178);
+            this.notetext2.Name = "notetext2";
+            this.notetext2.Size = new System.Drawing.Size(336, 16);
+            this.notetext2.TabIndex = 30;
+            this.notetext2.Text = "PS2：请务必输入为 https:// 否则会无法打开";
+            // 
             // tw
             // 
             this.tw.BackColor = System.Drawing.Color.Transparent;
@@ -177,17 +188,6 @@
             this.gg.Size = new System.Drawing.Size(247, 30);
             this.gg.TabIndex = 26;
             this.gg.TabStop = false;
-            // 
-            // notetext2
-            // 
-            this.notetext2.AutoSize = true;
-            this.notetext2.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notetext2.ForeColor = System.Drawing.Color.Red;
-            this.notetext2.Location = new System.Drawing.Point(3, 178);
-            this.notetext2.Name = "notetext2";
-            this.notetext2.Size = new System.Drawing.Size(336, 16);
-            this.notetext2.TabIndex = 30;
-            this.notetext2.Text = "PS2：请务必输入为 https:// 否则会无法打开";
             // 
             // uphosts
             // 
